@@ -53,8 +53,8 @@ public class Board {
                 a++;
                 i++;
             }
-            if(readFiles[i].startsWith("Restroom")){
-                ifRestroom(a,readFiles,i+1,readFiles[i+1].startsWith("goTo"));
+            if(readFiles[i].startsWith("Jail")){
+                ifJail(a,readFiles,i+1,readFiles[i+1].startsWith("goTo"));
                 a++;
             }
 
@@ -71,11 +71,11 @@ public class Board {
     private void ifChanceToArray(int arrayToFill,String[] readFiles,int placementRead){
         this.fields[arrayToFill]= new Chance(readFiles[placementRead],readFiles[placementRead+1],placementRead);
     }
-    private void ifRestroom(int arrayToFill,String[] readFiles,int placementRead,boolean goTo){
+    private void ifJail(int arrayToFill, String[] readFiles, int placementRead, boolean goTo){
         if(goTo){
-            this.fields[arrayToFill]= new RestRoom(readFiles[placementRead+1],readFiles[placementRead+2],placementRead, true);
+            this.fields[arrayToFill]= new Jail(readFiles[placementRead+1],readFiles[placementRead+2],placementRead, true);
         }else {
-            this.fields[arrayToFill] = new RestRoom(readFiles[placementRead], readFiles[placementRead + 1], placementRead, false);
+            this.fields[arrayToFill] = new Jail(readFiles[placementRead], readFiles[placementRead + 1], placementRead, false);
         }
     }
 

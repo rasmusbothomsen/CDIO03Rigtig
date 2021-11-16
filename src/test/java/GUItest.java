@@ -5,7 +5,6 @@ class GUItest {
 
     @Test
     void guiTest(){
-        GUIcreator.main(null);
 
 
     }

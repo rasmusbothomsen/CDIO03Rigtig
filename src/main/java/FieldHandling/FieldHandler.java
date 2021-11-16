@@ -22,7 +22,7 @@ public class FieldHandler {
         if(fields[player.getPlacementONBoard()].getClass().equals(Chance.class)){
             isChance(player,fields);
         }
-        if(fields[player.getPlacementONBoard()].getClass().equals(RestRoom.class)){
+        if(fields[player.getPlacementONBoard()].getClass().equals(Jail.class)){
             isRestroom(player,fields);
         }
         if(fields[player.getPlacementONBoard()].getClass().equals(Field.class)){
@@ -52,7 +52,7 @@ public class FieldHandler {
 
     }
     private void isRestroom(Player player, Object[] fields){
-        RestRoom field = (RestRoom) fields[player.getPlacementONBoard()];
+        Jail field = (Jail) fields[player.getPlacementONBoard()];
         if(field.isGoTo()){
             player.setPlacementONBoard(18);
             player.addMoney(-3);

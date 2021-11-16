@@ -6,15 +6,6 @@ import gui_main.GUI;
 import java.awt.*;
 
 public class GUIcreator {
-    public static void main(String[] args) {
-        GUI_Field[] fields = guiCreator();
-        GUI gui = new GUI(fields,Color.pink.darker());
-        gui.displayChanceCard();
-
-
-
-
-    }
 
     public static GUI_Field[] guiCreator() {
         Board board = new Board();
@@ -36,8 +27,8 @@ public class GUIcreator {
                         ,Color.WHITE,Color.BLACK);
 
             }
-            if(fieldFromBoard[i].getClass().equals(RestRoom.class)){
-                if(((RestRoom)fieldFromBoard[i]).isGoTo()){
+            if(fieldFromBoard[i].getClass().equals(Jail.class)){
+                if(((Jail)fieldFromBoard[i]).isGoTo()){
                     guiFields[i]=new GUI_Jail(null,((Field) fieldFromBoard[i]).getFieldName(),((Field) fieldFromBoard[i]).getFieldDiscription(),"Go to",Color.GRAY,Color.BLUE);
                 }else{
                     guiFields[i]=new GUI_Jail(null,((Field) fieldFromBoard[i]).getFieldName(),((Field) fieldFromBoard[i]).getFieldDiscription(),"Visit",Color.GRAY,Color.BLUE);

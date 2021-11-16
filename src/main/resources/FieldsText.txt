@@ -20,7 +20,7 @@ Amusement 6
 Iskiosken
 Du er taget i iskiosen.
 1
-Restroom 7
+Jail 7
 Fængsel
 Du er på besøg i fængsel!
 Amusement 8
@@ -63,7 +63,7 @@ Amusement 18
 Dyrehandlen
 Temp disc
 3
-Restroom 19
+Jail 19
 goTo // dont touch
 Gå i fængsel
 temp disc
