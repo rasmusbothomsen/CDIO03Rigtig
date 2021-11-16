@@ -56,7 +56,7 @@ Chance 16
 Chancen
 Du er landet på Chancen, træk nu et tilfældigt kort.
 Amusement 17
-Legetøjsbutikken
+Legetøjsbuti-  kken
 temp disc
 3
 Amusement 18
@@ -72,7 +72,7 @@ bowlinghallen
 temp disc
 4
 Amusement 21
-zoo
+Zoo
 temp disc
 4
 Chance 22
@@ -83,6 +83,6 @@ Vandlandet
 temp disc
 5
 Amusement 23
-strandpromaden
+Strand- promaden
 temp disc
 5

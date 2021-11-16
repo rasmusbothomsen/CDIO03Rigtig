@@ -6,7 +6,9 @@ import gui_main.GUI;
 import java.awt.*;
 
 public class GUIcreator {
-
+    public static void main(String[] args) {
+        GUI gui = new GUI(guiCreator(),Color.pink.darker());
+    }
     public static GUI_Field[] guiCreator() {
         Board board = new Board();
         Object[] fields = board.getFields();
@@ -29,9 +31,9 @@ public class GUIcreator {
             }
             if(fieldFromBoard[i].getClass().equals(Jail.class)){
                 if(((Jail)fieldFromBoard[i]).isGoTo()){
-                    guiFields[i]=new GUI_Jail(null,((Field) fieldFromBoard[i]).getFieldName(),((Field) fieldFromBoard[i]).getFieldDiscription(),"Go to",Color.GRAY,Color.BLUE);
+                    guiFields[i]=new GUI_Jail("default",((Field) fieldFromBoard[i]).getFieldName(),((Field) fieldFromBoard[i]).getFieldDiscription(),"Go to",Color.GRAY,Color.BLUE);
                 }else{
-                    guiFields[i]=new GUI_Jail(null,((Field) fieldFromBoard[i]).getFieldName(),((Field) fieldFromBoard[i]).getFieldDiscription(),"Visit",Color.GRAY,Color.BLUE);
+                    guiFields[i]=new GUI_Jail("default",((Field) fieldFromBoard[i]).getFieldName(),((Field) fieldFromBoard[i]).getFieldDiscription(),"Visit",Color.GRAY,Color.BLUE);
                 }
 
             }
