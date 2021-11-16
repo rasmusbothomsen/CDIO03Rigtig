@@ -3,43 +3,43 @@ Start
 Start
 Amusement 2
 Burgerbaren
-Du har landet på Burgerbaren!
+Du har landet på Burgerbaren! Hvis ejendommen er ledig skal du købe ejendommen for nedenstående beløb, hvis den er ejet af en anden spiller skal du betale samme beløb i leje, hvis den anden spiller ejer både pizzeriaet og burgerbaren skal du betale dobbelt leje. Hvis du selv ejer ejendommen kan du blot hvile dig uden at betale.
 1
 Amusement 3
 Pizzeriaet
-Du har besøgt pizzeriaet
+Du har besøgt pizzeriaet! Hvis ejendommen er ledig skal du købe ejendommen for nedenstående beløb, hvis den er ejet af en anden spiller skal du betale samme beløb i leje, hvis den anden spiller ejer både pizzeriaet og burgerbaren skal du betale dobbelt leje. Hvis du selv ejer ejendommen kan du blot hvile dig uden at betale.
 1
 Chance 4
 Chance
-Du er landet på Chancen, træk nu et tilfældigt kort.
+Du er landet på Chancen, træk nu et tilfældigt kort og følg kortets anvisninger.
 Amusement 5
 Slikbutikken
-Du har været i slikbutikken!
+Du har været i slikbutikken! Hvis ejendommen er ledig skal du købe ejendommen for nedenstående beløb, hvis den er ejet af en anden spiller skal du betale samme beløb i leje, hvis den anden spiller ejer både iskiosken og slikbutikken skal du betale dobbelt leje. Hvis du selv ejer ejendommen kan du blot hvile dig uden at betale.
 1
 Amusement 6
 Iskiosken
-Du er taget i iskiosen.
+Du har været i iskiosken! Hvis ejendommen er ledig skal du købe ejendommen for nedenstående beløb, hvis den er ejet af en anden spiller skal du betale samme beløb i leje, hvis den anden spiller ejer både iskiosken og slikbutikken skal du betale dobbelt leje. Hvis du selv ejer ejendommen kan du blot hvile dig uden at betale.
 1
 Jail 7
 Fængsel
-Du er på besøg i fængsel!
+Du er på besøg i fængsel! Her kan du blot hvile dig uden at betale noget.
 Amusement 8
 Museum
-Du er taget på museum for at lære lidt om historien!
+Du er taget på museum for at lære lidt om historien! Hvis ejendommen er ledig skal du købe ejendommen for nedenstående beløb, hvis den er ejet af en anden spiller skal du betale samme beløb i leje, hvis den anden spiller ejer både museet og biblioteket skal du betale dobbelt leje. Hvis du selv ejer ejendommen kan du blot hvile dig uden at betale.
 2
 Amusement 9
 Biblioteket
-Temp Disc
+Du er taget på biblioteket! Hvis ejendommen er ledig skal du købe ejendommen for nedenstående beløb, hvis den er ejet af en anden spiller skal du betale samme beløb i leje, hvis den anden spiller ejer både museet og biblioteket skal du betale dobbelt leje. Hvis du selv ejer ejendommen kan du blot hvile dig uden at betale.
 2
 Chance 10
 Chance
-Du er landet på Chancen, træk nu et tilfældigt kort.
+Du er landet på Chancen, træk nu et tilfældigt kort og følg kortets anvisninger.
 Amusement 11
 Skaterparken
-Temp disc
+Du er taget til skaterparken for at få lidt motion!
 2
 Amusement 12
-Svømmingpoolen
+Svømming- poolen
 temp disc
 2
 Field 13

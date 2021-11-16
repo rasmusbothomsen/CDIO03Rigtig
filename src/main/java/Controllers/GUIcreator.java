@@ -6,14 +6,12 @@ import gui_main.GUI;
 import java.awt.*;
 
 public class GUIcreator {
-    public static void main(String[] args) {
-        GUI gui = new GUI(guiCreator(),Color.pink.darker());
-    }
-    public static GUI_Field[] guiCreator() {
+
+    public static GUI guiCreator(Color boardColor) {
         Board board = new Board();
         Object[] fields = board.getFields();
         GUI_Field[] guiFields = fieldsCreator(fields);
-        return fieldsCreator(fields);
+        return new GUI(fieldsCreator(fields),boardColor);
 
     }
     private static GUI_Field[] fieldsCreator(Object[] fieldFromBoard){
