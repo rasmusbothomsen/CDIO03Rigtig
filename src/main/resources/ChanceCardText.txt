@@ -1,0 +1,61 @@
+Card 1 - First line : Name of card
+Ryk frem til start
+Ryk frem til start, modtag 2 dollars.
+Card 2
+Ryk 5 felter
+Ryk op til 5 felter frem.
+Card 3
+Ryk 1 felt frem
+Ryk 1 felt frem, eller træk et chance kort mere.
+Card 4
+Spist for meget slik
+Du har spist for meget slik! betal 2$ til banken
+Card 5
+Løsladt
+Du løslades uden omkostninger, behold dette kort indtil du får brug for det.
+Card 6
+Ryk frem til start.
+Ryk frem til start, modtag 2 dollars.
+Card 7
+Ryk frem til start.
+Ryk frem til start, modtag 2 dollars.
+Card 8
+Ryk frem til start.
+Ryk frem til start, modtag 2 dollars.
+Card 9
+Ryk frem til start.
+Ryk frem til start, modtag 2 dollars.
+Card 10
+Ryk frem til start.
+Ryk frem til start, modtag 2 dollars.
+Card 11
+Ryk frem til start.
+Ryk frem til start, modtag 2 dollars.
+Card 12
+Ryk frem til start.
+Ryk frem til start, modtag 2 dollars.
+Card 13
+Ryk frem til start.
+Ryk frem til start, modtag 2 dollars.
+Card 14
+Ryk frem til start.
+Ryk frem til start, modtag 2 dollars.
+Card 15
+Ryk frem til start.
+Ryk frem til start, modtag 2 dollars.
+Card 16
+Ryk frem til start.
+Ryk frem til start, modtag 2 dollars.
+Card 17
+Ryk frem til start.
+Ryk frem til start, modtag 2 dollars.
+Card 18
+Ryk frem til start.
+Ryk frem til start, modtag 2 dollars.
+Card 19
+Ryk frem til start.
+Ryk frem til start, modtag 2 dollars.
+Card 20
+Ryk frem til start.
+Ryk frem til start, modtag 2 dollars.
+
