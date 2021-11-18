@@ -1,5 +1,7 @@
 package TurnHandling;
 
+import Controllers.GameController;
+
 public class Player {
         private final String name;
 
@@ -14,7 +16,12 @@ public class Player {
     }
     public void movePlacementOnBoard(int movedBy){
         this.placementONBoard+=movedBy;
+        if(placementONBoard>=24){
+            placementONBoard=0;
+            GameController.passStart(this);
+        }
     }
+
 
     private int placementONBoard;
 

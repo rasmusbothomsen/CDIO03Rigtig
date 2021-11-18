@@ -14,6 +14,7 @@ public class GUIcreator {
         return new GUI(fieldsCreator(fields),boardColor);
 
     }
+
     private static GUI_Field[] fieldsCreator(Object[] fieldFromBoard){
         GUI_Field[] guiFields = new GUI_Field[24];
         guiFields[0]= new GUI_Start(((Field)fieldFromBoard[0]).getFieldName(),((Field)fieldFromBoard[0]).getFieldName(),((Field)fieldFromBoard[0]).getFieldDiscription(),Color.WHITE.darker(),Color.green.darker());
