@@ -8,7 +8,6 @@ import TurnHandling.Player;
 public class GameController {
     private static GUIHandler guiHandler;
     private static PlayTurn[] playTurn;
-    private static FieldHandler fieldHandler;
     private static Player[] players;
     private static String[] gameText;
     private static int nextPlayersTurn;
@@ -16,8 +15,8 @@ public class GameController {
     public GameController(Player[] players) {
         this.players =players;
         guiHandler=new GUIHandler(players);
-        fieldHandler=new FieldHandler();
         playTurn= new PlayTurn[players.length];
+        FieldHandler fieldHandler = new FieldHandler();
         initiatePlayturn();
     }
     private static void initiatePlayturn(){
@@ -60,9 +59,9 @@ public class GameController {
     }
     private static void rollAgain(int amoutSame){
         Player[] playersToRollAgain = new Player[amoutSame];
-        for (int i = 0; i < amoutSame; i++) {
-
+                    int i =0;
             switch (amoutSame){
+
                 case 1:
                     playersToRollAgain[i]= players[4];
                     i++;
@@ -92,10 +91,10 @@ public class GameController {
                     break;
                 default:
             }
-        }
+
         String rollAgainText = "";
-        for (int i = 0; i < amoutSame; i++) {
-        rollAgainText+=playersToRollAgain[i].getName();
+        for (int a = 0; i < amoutSame; i++) {
+        rollAgainText+=playersToRollAgain[a].getName();
             if (i<amoutSame-1){
                 rollAgainText+=", ";
             }else{
@@ -145,7 +144,5 @@ public class GameController {
         FieldHandler.initiateField(players[nextPlayersTurn]);
 
     }
-    public static void printFieldDescription(Field field){
 
-    }
 }

@@ -36,14 +36,14 @@ public class GUIHandler {
     }
 
     public static void movePlayer(Player player){
-        int playerLastPosition = getPlayerPlacement(player.getPlayerNumber()-1);
+        int playerLastPosition = getPlayerPlacement(player.getPlayerNumber());
         removeAndAddRemainingPLayers(player.getPlayerNumber(),playerLastPosition);
-        fields[player.getPlacementONBoard()-1].setCar(guiPlayers[player.getPlayerNumber()-1],true);
+        fields[player.getPlacementONBoard()].setCar(guiPlayers[player.getPlayerNumber()],true);
     }
     private static void removeAndAddRemainingPLayers(int playerNumber, int playerLastPosition){
         GUI_Player[] playersOnField= new GUI_Player[guiPlayers.length];
         for(int i =0;i< guiPlayers.length;i++){
-            if(i==playerNumber-1){
+            if(i==playerNumber){
 
             }else if (fields[playerLastPosition].hasCar(guiPlayers[i])){
                 playersOnField[i]=guiPlayers[i];
@@ -73,9 +73,12 @@ public class GUIHandler {
     public static void addHouseToField(Player player){
         if(fields[player.getPlacementONBoard()].getClass().equals(GUI_Street.class)) {
             ((GUI_Street) fields[player.getPlacementONBoard()]).setOwnerName(player.getName());
-            ((GUI_Street) fields[player.getPlacementONBoard()]).setHotel(true);
+            ((GUI_Street) fields[player.getPlacementONBoard()]).setHouses(1);
         }
 
+    }
+    public static String askMultiple(String question, String... choices){
+        return gui.getUserButtonPressed(question,choices);
     }
     public static boolean addChoice(String firstChoice, String secondChoice, String description){
         return gui.getUserLeftButtonPressed(description,firstChoice,secondChoice);
@@ -103,6 +106,9 @@ public class GUIHandler {
             guiPlayers[i].setBalance(players[i].getMoney());
 
         }
+    }
+    public static void playerWentToJail(Player player){
+
     }
 
 

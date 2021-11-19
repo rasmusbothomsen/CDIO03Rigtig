@@ -36,7 +36,7 @@ public class Board {
         fillArrays();
     }
     private void fillArrays(){
-        this.fields=new Field[24];
+        fields=new Field[24];
         TextFileReader reader = new TextFileReader("FieldsText.txt");
         String[] readFiles = reader.fileReader();
         for(int i =0,a=0; i<readFiles.length&&a<fields.length;i++){
@@ -60,7 +60,6 @@ public class Board {
 
 
         }
-
 
 
     }

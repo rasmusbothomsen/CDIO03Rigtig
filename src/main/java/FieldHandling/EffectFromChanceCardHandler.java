@@ -1,11 +1,14 @@
 package FieldHandling;
 
 import TurnHandling.Player;
+import Controllers.GUIHandler;
 
 public class EffectFromChanceCardHandler {
     private Player player;
+    private ChanceCard drawnCard;
     public String[] applyEffectFromCard(Player player, ChanceCard card){
         this.player=player;
+        drawnCard=card;
         switch (card.effectOnPlayer){
             case 0:
                 effectOne();
@@ -50,9 +53,11 @@ public class EffectFromChanceCardHandler {
     private void effectOne(){
         player.setPlacementONBoard(0);
         player.addMoney(2);
+        GUIHandler.showChanceCard(drawnCard);
     }
     private void effectTwo(){
         player.movePlacementOnBoard(5);
+
 
     }
     private void effectThree(){

@@ -63,12 +63,11 @@ public class FieldHandler {
         if(field.isGoTo()){
             player.setPlacementONBoard(18);
             player.addMoney(-3);
-            //Mangler resten af denne metode
+            GUIHandler.playerWentToJail(player);
         }
     }
     private static void isField(Player player,Object[] fields){
-        Field field = (Amusement)fields[player.getPlacementONBoard()];
-        //Mangler resten af denne her
+        GUIHandler.printField(player.getPlacementONBoard());
     }
 
 }
