@@ -1,20 +1,21 @@
 package FieldHandling;
 
 
+import Controllers.GUIHandler;
 import TurnHandling.Player;
 
 
 public class FieldHandler {
-    private CardDeck cardDeck;
-    private Board board;
-    private EffectFromChanceCardHandler chanceCardHandler;
+    private static CardDeck cardDeck;
+    private static Board board;
+    private static EffectFromChanceCardHandler chanceCardHandler;
 
     public FieldHandler() {
-        this.cardDeck = new CardDeck();
-        this.board = new Board();
-        this.chanceCardHandler=new EffectFromChanceCardHandler();
+        cardDeck = new CardDeck();
+        board = new Board();
+        chanceCardHandler=new EffectFromChanceCardHandler();
     }
-    public void initiateField(Player player){
+    public static void initiateField(Player player){
         Object[] fields = board.getFields();
         if(fields[player.getPlacementONBoard()].getClass().equals(Amusement.class)){
             isAmusement(player,fields);
@@ -33,25 +34,31 @@ public class FieldHandler {
 
 
     }
-    private void isAmusement(Player player, Object[] fields){
+    private static void isAmusement(Player player, Object[] fields){
        Amusement amusement= ((Amusement) fields[player.getPlacementONBoard()]);
        if(amusement.isOwned()){
            if(amusement.isAllIsOwned()){
                player.addMoney(amusement.getCost()*-2);
+               GUIHandler.printLandedOnOwnedAmusement((Amusement) fields[player.getPlacementONBoard()],player,amusement.getCost()*2);
+
            }else{
                player.addMoney(amusement.getCost()*-1);
+               GUIHandler.printLandedOnOwnedAmusement((Amusement) fields[player.getPlacementONBoard()],player,amusement.getCost());
            }
        }else{
            player.addMoney(amusement.getCost()*-1);
            amusement.setPlayerwhoOwnsIt(player);
+           GUIHandler.printLandedOnAmusement((Amusement) fields[player.getPlacementONBoard()],player);
        }
     }
-    private void isChance(Player player, Object[] fields){
+    private static void isChance(Player player, Object[] fields){
         Chance chanceField = (Chance)fields[player.getPlacementONBoard()];
-        chanceCardHandler.applyEffectFromCard(player, cardDeck.pullCard());
+        ChanceCard card = cardDeck.pullCard();
+        chanceCardHandler.applyEffectFromCard(player, card);
+        GUIHandler.showChanceCard(card);
 
     }
-    private void isRestroom(Player player, Object[] fields){
+    private static void isRestroom(Player player, Object[] fields){
         Jail field = (Jail) fields[player.getPlacementONBoard()];
         if(field.isGoTo()){
             player.setPlacementONBoard(18);
@@ -59,7 +66,7 @@ public class FieldHandler {
             //Mangler resten af denne metode
         }
     }
-    private void isField(Player player,Object[] fields){
+    private static void isField(Player player,Object[] fields){
         Field field = (Amusement)fields[player.getPlacementONBoard()];
         //Mangler resten af denne her
     }

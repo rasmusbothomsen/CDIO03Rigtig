@@ -1,4 +1,6 @@
 package Controllers;
+import FieldHandling.Board;
+import FieldHandling.Field;
 import TurnHandling.PlayTurn;
 import FieldHandling.FieldHandler;
 import TurnHandling.Player;
@@ -9,9 +11,10 @@ public class GameController {
     private static FieldHandler fieldHandler;
     private static Player[] players;
     private static String[] gameText;
+    private static int nextPlayersTurn;
 
     public GameController(Player[] players) {
-        this.players=players;
+        this.players =players;
         guiHandler=new GUIHandler(players);
         fieldHandler=new FieldHandler();
         playTurn= new PlayTurn[players.length];
@@ -38,7 +41,12 @@ public class GameController {
         }
         if(throwIsSame>0) {
             rollAgain(throwIsSame);
+            return;
         }
+        setStartingPlayer(comparedThrows);
+    }
+    private static void setStartingPlayer(int[][] playersRoll){
+        nextPlayersTurn=playersRoll[playersRoll.length-1][1];
     }
     private static int[] startOfGameThrows(Player[] playersToThrow){
         int[] rolls=new int[playersToThrow.length];
@@ -59,6 +67,7 @@ public class GameController {
                     playersToRollAgain[i]= players[4];
                     i++;
                     playersToRollAgain[i]= players[3];
+                    i--;
                     break;
                 case 2:
                     playersToRollAgain[i]= players[4];
@@ -66,6 +75,7 @@ public class GameController {
                     playersToRollAgain[i]= players[3];
                     i++;
                     playersToRollAgain[i]= players[2];
+                    i+=-2;
                     break;
                 case 3:
                     playersToRollAgain[i]= players[4];
@@ -75,6 +85,7 @@ public class GameController {
                     playersToRollAgain[i]= players[2];
                     i++;
                     playersToRollAgain[i]= players[1];
+                    i+=-3;
                     break;
                 case 4:
                     playersToRollAgain=players;
@@ -105,7 +116,7 @@ public class GameController {
         int[][] playerRolls = new int[rolls.length][2];
         for (int i = 0; i < rolls.length; i++) {
             playerRolls[i][0]=rolls[i];
-            playerRolls[i][1]=i+1;
+            playerRolls[i][1]=i;
         }
         for(int i =0;i<rolls.length-1;i++){
             int tempRoll;
@@ -120,5 +131,21 @@ public class GameController {
             }
         }
         return playerRolls;
+    }
+    public static void setUpBoard(){
+        for (int i = 0; i < players.length; i++) {
+            players[i].setPlacementONBoard(0);
+            guiHandler.movePlayer(players[i]);
+        }
+    }
+    public static void playOneTurn(){
+    int diceroll = playTurn[nextPlayersTurn].rollDice();
+        playTurn[nextPlayersTurn].movePlayer(diceroll);
+        GUIHandler.movePlayer(players[nextPlayersTurn]);
+        FieldHandler.initiateField(players[nextPlayersTurn]);
+
+    }
+    public static void printFieldDescription(Field field){
+
     }
 }

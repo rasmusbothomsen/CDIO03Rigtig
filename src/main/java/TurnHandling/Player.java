@@ -6,6 +6,7 @@ public class Player {
         private final String name;
 
         private int money;
+        private boolean isBroke;
 
     public int getPlacementONBoard() {
         return placementONBoard;
@@ -52,5 +53,6 @@ public class Player {
             this.playerNumber = playerNumber;
             this.money = 35;
             this.placementONBoard=0;
+            isBroke=false;
         }
     }
