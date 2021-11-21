@@ -6,7 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 public class run {
     public static void main(String[] args) {
-        StartOfGameGui.main(null);
+        StartOfGameGui startOfGameGui = new StartOfGameGui();
+        startOfGameGui.whatLanguage();
 
     }
 }

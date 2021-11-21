@@ -10,7 +10,7 @@ package Controllers;
 public class StartOfGameGui extends JPanel {
     private JButton danish;
     private JButton english;
-    private JButton jcomp3;
+    private JButton more;
     private JLabel Iintro;
     private JLabel jcomp5;
     private JLabel jcomp6;
@@ -23,7 +23,7 @@ public class StartOfGameGui extends JPanel {
         //construct components
         danish = new JButton("Danish");
         english = new JButton("English");
-        jcomp3 = new JButton("More");
+        more = new JButton("More");
         Iintro = new JLabel("Welcome to Monopoly Junior");
         jcomp5 = new JLabel("Hello and welcome to Monopoly Junior! ");
         jcomp6 = new JLabel("We are very exited to show you the game!");
@@ -36,7 +36,7 @@ public class StartOfGameGui extends JPanel {
         //add components
         add(danish);
         add(english);
-        add(jcomp3);
+        add(more);
         add(Iintro);
         add(jcomp5);
         add(jcomp6);
@@ -45,7 +45,7 @@ public class StartOfGameGui extends JPanel {
         //set component bounds (only needed by Absolute Positioning)
         danish.setBounds(105, 275, 100, 20);
         english.setBounds(230, 275, 100, 20);
-        jcomp3.setBounds(365, 270, 90, 25);
+        more.setBounds(365, 270, 90, 25);
         Iintro.setBounds(155, -10, 240, 75);
         jcomp5.setBounds(10, 80, 475, 25);
         jcomp6.setBounds(10, 105, 460, 35);
@@ -53,6 +53,12 @@ public class StartOfGameGui extends JPanel {
 
 
 
+
+
+    }
+
+
+    public String getLanguage() {
 
         danish.addActionListener(new ActionListener() {
             @Override
@@ -63,21 +69,18 @@ public class StartOfGameGui extends JPanel {
         english.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                language="danish";
+                language="english";
                 System.out.println("Testin");
             }
         });
-        jcomp3.addActionListener(new ActionListener() {
+        more.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 language="danish";
 
             }
         });
-    }
 
-
-    public static String getLanguage() {
         return language;
     }
 

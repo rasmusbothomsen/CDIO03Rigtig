@@ -43,8 +43,8 @@ Ryk frem til start, modtag 2 dollars.
 Card 15
 Ryk frem til start.
 Ryk frem til start, modtag 2 dollars.
-Card 16
 !!STOP
+Card 16
 Ryk frem til start.
 Ryk frem til start, modtag 2 dollars.
 Card 17

@@ -38,7 +38,6 @@ public class CardDeck {
         int amoutOfUseableText = 0;
         for (int s = 0 ;s<cardsText.length;s++ ) {
             if(cardsText[s].startsWith("!!STOP")){
-                amoutOfUseableText--;
                 break;
             }
 
