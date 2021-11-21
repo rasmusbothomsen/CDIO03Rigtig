@@ -8,8 +8,8 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 public class TextFileReader {
-        private int arrayLenght;
-        private URL resource;
+        private final int arrayLenght;
+        private final URL resource;
         private File file;
 
         public TextFileReader(String fileName) {

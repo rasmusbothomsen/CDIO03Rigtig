@@ -30,7 +30,7 @@ public class GUIHandler {
         gui = GUIcreator.guiCreator(Color.pink.darker());
         fields = gui.getFields();
         guiPlayers = new GUI_Player[players.length];
-        this.players=players;
+        GUIHandler.players =players;
         createPlayers(players);
 
     }

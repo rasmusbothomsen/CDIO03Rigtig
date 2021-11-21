@@ -1,9 +1,12 @@
 package Controllers;
+import FieldHandling.Amusement;
 import FieldHandling.Board;
 import FieldHandling.Field;
 import TurnHandling.PlayTurn;
 import FieldHandling.FieldHandler;
 import TurnHandling.Player;
+
+import java.util.concurrent.TimeUnit;
 
 public class GameController {
     private static GUIHandler guiHandler;
@@ -13,7 +16,7 @@ public class GameController {
     private static int nextPlayersTurn;
 
     public GameController(Player[] players) {
-        this.players =players;
+        GameController.players =players;
         guiHandler=new GUIHandler(players);
         playTurn= new PlayTurn[players.length];
         FieldHandler fieldHandler = new FieldHandler();
@@ -27,9 +30,10 @@ public class GameController {
 
 
 
+
 //alle tekst elementerne er placeholders
     public static void startOFGame(){
-    guiHandler.printText("Roll to start");
+    GUIHandler.printText("Roll to start");
    int[] rolls = startOfGameThrows(players);
     int[][] comparedThrows= compareThrows(rolls);
     int throwIsSame=0;
@@ -50,50 +54,20 @@ public class GameController {
     private static int[] startOfGameThrows(Player[] playersToThrow){
         int[] rolls=new int[playersToThrow.length];
         for (int i = 0; i<playersToThrow.length;i++) {
-            guiHandler.askToRoll(playersToThrow[i].getName()+"'s Turn. Please roll");
+            GUIHandler.askToRoll(playersToThrow[i].getName()+"'s Turn. Please roll");
             rolls[i]=playTurn[i].rollDice();
-            guiHandler.showDiceRoll(rolls[i]);
-            guiHandler.printText(playersToThrow[i].getName()+" rolled a " + rolls[i]+"!");
+            GUIHandler.showDiceRoll(rolls[i]);
+            GUIHandler.printText(playersToThrow[i].getName()+" rolled a " + rolls[i]+"!");
         }
         return rolls;
     }
     private static void rollAgain(int amoutSame){
         Player[] playersToRollAgain = new Player[amoutSame];
-                    int i =0;
-            switch (amoutSame){
-
-                case 1:
-                    playersToRollAgain[i]= players[4];
-                    i++;
-                    playersToRollAgain[i]= players[3];
-                    i--;
-                    break;
-                case 2:
-                    playersToRollAgain[i]= players[4];
-                    i++;
-                    playersToRollAgain[i]= players[3];
-                    i++;
-                    playersToRollAgain[i]= players[2];
-                    i+=-2;
-                    break;
-                case 3:
-                    playersToRollAgain[i]= players[4];
-                    i++;
-                    playersToRollAgain[i]= players[3];
-                    i++;
-                    playersToRollAgain[i]= players[2];
-                    i++;
-                    playersToRollAgain[i]= players[1];
-                    i+=-3;
-                    break;
-                case 4:
-                    playersToRollAgain=players;
-                    break;
-                default:
-            }
-
+        for (int a = players.length-1, b=0; b < amoutSame; a--,b++) {
+            playersToRollAgain[b]=players[a];
+        }
         String rollAgainText = "";
-        for (int a = 0; i < amoutSame; i++) {
+        for (int a = 0, i =0; i < amoutSame; i++) {
         rollAgainText+=playersToRollAgain[a].getName();
             if (i<amoutSame-1){
                 rollAgainText+=", ";
@@ -101,13 +75,13 @@ public class GameController {
                 rollAgainText+=" and rolled the same, roll again";
             }
         }
-        guiHandler.printText(rollAgainText);
+        GUIHandler.printText(rollAgainText);
         startOfGameThrows(playersToRollAgain);
     }
     public static void passStart(Player player){
         player.addMoney(2);
-        guiHandler.movePlayer(player);
-        guiHandler.printText(player.getName()+" passed start, recive 2$");
+        GUIHandler.movePlayer(player);
+        GUIHandler.printText(player.getName()+" passed start, recive 2$");
 
 
     }
@@ -134,17 +108,17 @@ public class GameController {
     public static void setUpBoard(){
         for (int i = 0; i < players.length; i++) {
             players[i].setPlacementONBoard(0);
-            guiHandler.movePlayer(players[i]);
+            GUIHandler.movePlayer(players[i]);
         }
     }
     public static void playOneTurn(){
     int diceroll = playTurn[nextPlayersTurn].rollDice();
-        guiHandler.askToRoll(players[nextPlayersTurn].getName()+"'s Turn. Please roll");
-        guiHandler.showDiceRoll(diceroll);
+        GUIHandler.askToRoll(players[nextPlayersTurn].getName()+"'s Turn. Please roll");
+        GUIHandler.showDiceRoll(diceroll);
         playTurn[nextPlayersTurn].movePlayer(diceroll);
         GUIHandler.movePlayer(players[nextPlayersTurn]);
         FieldHandler.initiateField(players[nextPlayersTurn]);
-        nextPlayersTurn++;
+        addOneToNextPlaer();
 
     }
     public static void playOneExtraTurn(){
@@ -153,7 +127,8 @@ public class GameController {
         playTurn[nextPlayersTurn].movePlayer(diceroll);
         GUIHandler.movePlayer(players[nextPlayersTurn]);
         FieldHandler.initiateField(players[nextPlayersTurn]);
-        nextPlayersTurn++;
+        addOneToNextPlaer();
+
     }
     public static Player returnIfPlayerBroke(){
         for (int i = 0; i < players.length; i++) {
@@ -178,8 +153,23 @@ public class GameController {
         return comparedPlayers;
     }
     public static void movePlayer(Player player){
-        guiHandler.movePlayer(player);
+        GUIHandler.movePlayer(player);
         FieldHandler.initiateField(player);
+    }
+    public static void getFreeField(Player player){
+        Amusement amusement = (Amusement) FieldHandler.getOneField(player.getPlacementONBoard());
+        int tempCost= amusement.getCost();
+        amusement.setCost(0);
+        FieldHandler.initiateField(player);
+        amusement.setCost(tempCost);
+        GUIHandler.movePlayer(player);
+
+    }
+    private static void addOneToNextPlaer(){
+        nextPlayersTurn++;
+        if(nextPlayersTurn>=players.length){
+            nextPlayersTurn=0;
+        }
     }
 
 }

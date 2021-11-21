@@ -7,8 +7,8 @@ import Controllers.GameController;
 public class PlayTurn {
 
     private boolean isBroke;
-   private Player player;
-   private DiceRoller diceRoller;
+   private final Player player;
+   private final DiceRoller diceRoller;
 
     public PlayTurn(boolean isBroke, Player player) {
         this.isBroke = isBroke;

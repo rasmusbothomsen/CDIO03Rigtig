@@ -1,0 +1,49 @@
+TIL OVERSÆTTER: This textfile kan be translated to other languages. The textfile is build, so that the code can read the textfile.
+                It is important to make sure, that the numbers and the title dose not change.
+                The text below a number and a title, can be changed into the preffered language.
+1
+Intro
+Welcome to Monopoly Junior.
+This game goal is to make the most money, and not go broke.
+This game can be played by 2 to 4 persons.
+The game is played in turns. When it is a players turn, the player will roll a dice and move accordingly to the value of the dice.
+If a player lands on an Amusement Field, the player have to buy the amusement if it is not owned in advance.
+If it is owned, the player have to pay the owner of that amusement the fee of the amusement.
+If a player lands on go to jail, the player moves to jail.
+If a player lands on a chance card, anything can happen.
+The first player to go broke, loses the game. The winner is the one with most money at that moment.
+Good Luck!
+2
+StartPlayerAmount
+How many players?
+3
+StartRoll
+'s turn - Roll to see who starts!
+4
+TurnRoll
+'s turn - Press on roll to roll the dice.
+5
+AmusementNotOwned
+YOu have to buy this amusenment. Price is:
+6
+AmusementBuy
+You now own the amusement:
+7
+AmusementIsOwned
+This amusement is owned by another player. You have to pay:
+8
+OutOfJailCard
+You are now free from the jail.
+9
+Bankrupt
+You are broke and the game is over.
+10
+Winner
+The winner of Monopoly Junior is:
+11
+ErrorMessage
+The input you entered cannot be read by the program. Please try again.
+
+
+
+

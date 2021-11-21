@@ -8,7 +8,7 @@ public class Bank {
     private static Player[] players;
 
     public Bank(Player[] players) {
-        this.players = players;
+        Bank.players = players;
     }
 
     public static void affectPlayersBank(int playerNumberOne, int affectAmount) {

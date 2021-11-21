@@ -2,8 +2,8 @@ package FieldHandling;
 
 
 public class Field {
-    private String fieldName;
-    private String fieldDiscription;
+    private final String fieldName;
+    private final String fieldDiscription;
 
     public String getFieldName() {
         return fieldName;
@@ -17,7 +17,7 @@ public class Field {
         return placementOnBoard;
     }
 
-    private int placementOnBoard;
+    private final int placementOnBoard;
     private String type;
 
     public Field(String fieldName, String fieldDiscription, int placementOnBoard) {

@@ -20,14 +20,19 @@ public class Player {
         this.canSkipJail = canSkipJail;
     }
 
-    private boolean isBroke;
+    private final boolean isBroke;
 
     public int getPlacementONBoard() {
         return placementONBoard;
     }
 
     public void setPlacementONBoard(int placementONBoard) {
-        this.placementONBoard = placementONBoard;
+        if(this.placementONBoard>placementONBoard){
+            this.placementONBoard = placementONBoard;
+            GameController.passStart(this);
+        }
+        this.placementONBoard=placementONBoard;
+
     }
     public void movePlacementOnBoard(int movedBy){
         this.placementONBoard+=movedBy;

@@ -55,6 +55,7 @@ public class FieldHandler {
         Chance chanceField = (Chance)fields[player.getPlacementONBoard()];
         ChanceCard card = cardDeck.pullCard();
         GUIHandler.showChanceCard(card);
+        System.out.println(card.nameOfCard+"\n"+card.cardDescription);
         chanceCardHandler.applyEffectFromCard(player, card);
 
     }
