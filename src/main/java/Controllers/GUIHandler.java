@@ -110,6 +110,9 @@ public class GUIHandler {
     public static void playerWentToJail(Player player){
 
     }
+    public static boolean askYesOrNo(String question, String choice1, String choice2){
+        return gui.getUserLeftButtonPressed(question,choice1,choice2);
+    }
 
 
 

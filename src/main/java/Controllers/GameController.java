@@ -139,10 +139,47 @@ public class GameController {
     }
     public static void playOneTurn(){
     int diceroll = playTurn[nextPlayersTurn].rollDice();
+        guiHandler.askToRoll(players[nextPlayersTurn].getName()+"'s Turn. Please roll");
+        guiHandler.showDiceRoll(diceroll);
         playTurn[nextPlayersTurn].movePlayer(diceroll);
         GUIHandler.movePlayer(players[nextPlayersTurn]);
         FieldHandler.initiateField(players[nextPlayersTurn]);
+        nextPlayersTurn++;
 
+    }
+    public static void playOneExtraTurn(){
+        nextPlayersTurn+=-1;
+        int diceroll = playTurn[nextPlayersTurn].rollDice();
+        playTurn[nextPlayersTurn].movePlayer(diceroll);
+        GUIHandler.movePlayer(players[nextPlayersTurn]);
+        FieldHandler.initiateField(players[nextPlayersTurn]);
+        nextPlayersTurn++;
+    }
+    public static Player returnIfPlayerBroke(){
+        for (int i = 0; i < players.length; i++) {
+            if(players[i].isBroke()){
+                return players[i];
+            }
+
+        }
+        return null;
+    }
+    public static Player[] comparePlayerMoney(){
+        Player[] comparedPlayers = players;
+        Player tempPlayer;
+        for (int i = 0; i < players.length-1; i++) {
+            if(comparedPlayers[i].getMoney()>comparedPlayers[i+1].getMoney()){
+                tempPlayer=comparedPlayers[i+1];
+                comparedPlayers[i+1]=comparedPlayers[i];
+                comparedPlayers[i]=tempPlayer;
+
+            }
+        }
+        return comparedPlayers;
+    }
+    public static void movePlayer(Player player){
+        guiHandler.movePlayer(player);
+        FieldHandler.initiateField(player);
     }
 
 }
