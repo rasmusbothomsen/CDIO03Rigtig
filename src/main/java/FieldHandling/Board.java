@@ -5,26 +5,26 @@ import Controllers.TextFileReader;
 public class Board {
 
 
-    private Object[] fields;
+    private  Object[] fields;
 
     @Override
     public String toString() {
-
         StringBuilder boardDiscription= new StringBuilder("Fied  1: \t");
-        for(int i =0;i<this.fields.length;i++){
-            boardDiscription.append(((Field) this.fields[i]).getFieldName());
-            if(i<this.fields.length-1) {
+        for(int i =0;i<fields.length;i++){
+            boardDiscription.append(((Field) fields[i]).getFieldName());
+            if(i<fields.length-1) {
                 boardDiscription.append("\nField ").append(i + 2).append(":\t");
             }
         }
 
         return boardDiscription.toString();
     }
-    protected String toClasses(){
+
+    protected  String toClasses(){
         StringBuilder boardDiscription= new StringBuilder("Fied  1: \t");
-        for(int i =0;i<this.fields.length;i++){
-            boardDiscription.append(this.fields[i].getClass());
-            if(i<this.fields.length-1) {
+        for(int i =0;i<fields.length;i++){
+            boardDiscription.append(fields[i].getClass());
+            if(i<fields.length-1) {
                 boardDiscription.append("\nField ").append(i + 2).append(":\t");
             }
         }
@@ -35,7 +35,7 @@ public class Board {
     public Board() {
         fillArrays();
     }
-    private void fillArrays(){
+    private  void fillArrays(){
         fields=new Field[24];
         TextFileReader reader = new TextFileReader("FieldsText.txt");
         String[] readFiles = reader.fileReader();
@@ -63,28 +63,28 @@ public class Board {
 
 
     }
-    private void ifFieldToArray(int arrayToFill,String[] readFiles,int placementRead ) {
-        this.fields[arrayToFill]= new Field(readFiles[placementRead],readFiles[placementRead+1],placementRead);
+    private  void ifFieldToArray(int arrayToFill,String[] readFiles,int placementRead ) {
+        fields[arrayToFill]= new Field(readFiles[placementRead],readFiles[placementRead+1],placementRead);
 
     }
-    private void ifChanceToArray(int arrayToFill,String[] readFiles,int placementRead){
-        this.fields[arrayToFill]= new Chance(readFiles[placementRead],readFiles[placementRead+1],placementRead);
+    private  void ifChanceToArray(int arrayToFill,String[] readFiles,int placementRead){
+        fields[arrayToFill]= new Chance(readFiles[placementRead],readFiles[placementRead+1],placementRead);
     }
-    private void ifJail(int arrayToFill, String[] readFiles, int placementRead, boolean goTo){
+    private  void ifJail(int arrayToFill, String[] readFiles, int placementRead, boolean goTo){
         if(goTo){
-            this.fields[arrayToFill]= new Jail(readFiles[placementRead+1],readFiles[placementRead+2],placementRead, true);
+            fields[arrayToFill]= new Jail(readFiles[placementRead+1],readFiles[placementRead+2],placementRead, true);
         }else {
-            this.fields[arrayToFill] = new Jail(readFiles[placementRead], readFiles[placementRead + 1], placementRead, false);
+            fields[arrayToFill] = new Jail(readFiles[placementRead], readFiles[placementRead + 1], placementRead, false);
         }
     }
 
-    public Object[] getFields() {
-        return this.fields;
+    public  Object[] getFields() {
+        return fields;
     }
 
-    private void ifAmusementToArray(int arrayToFill, String[] readFiles, int placementRead){
+    private  void ifAmusementToArray(int arrayToFill, String[] readFiles, int placementRead){
 
-            this.fields[arrayToFill] = new Amusement(readFiles[placementRead], readFiles[placementRead + 1], arrayToFill, Integer.parseInt(readFiles[placementRead + 2]));
+            fields[arrayToFill] = new Amusement(readFiles[placementRead], readFiles[placementRead + 1], arrayToFill, Integer.parseInt(readFiles[placementRead + 2]));
 
 
 

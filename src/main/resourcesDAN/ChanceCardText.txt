@@ -1,4 +1,4 @@
-Card 1 First line : Name of card
+Card 1 - First line : Name of card
 Ryk frem til start
 Ryk frem til start, modtag 2 dollars.
 Card 2

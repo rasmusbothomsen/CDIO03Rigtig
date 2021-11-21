@@ -1,6 +1,7 @@
 package Controllers;
 
 import FieldHandling.ChanceCard;
+import Objects.PlayerCreators;
 import TurnHandling.Player;
 import org.junit.jupiter.api.Test;
 
@@ -10,13 +11,10 @@ class GUIHandlerTest {
 
     @Test
      void testAskToRoll(){
-        Player[] players = new Player[4];
-        for(int i =0; i<4;i++){
-            players[i] = new Player("test"+i,i);
-        }
-        GUIHandler guiHandler = new GUIHandler(players);
+
+        GUIHandler guiHandler = new GUIHandler(PlayerCreators.createPlayers());
         ChanceCard chanceCard = new ChanceCard("abe","monkeyy",2);
-        guiHandler.askToRoll("roll please");
+        GUIHandler.askToRoll("roll please");
 
     }
 

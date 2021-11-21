@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class CardDeck {
 
-    private ChanceCard[] cardDeck;
+    private final ChanceCard[] cardDeck;
     private int whereInDeck;
 
     public CardDeck(){
@@ -36,17 +36,22 @@ public class CardDeck {
         TextFileReader reader = new TextFileReader("ChanceCardText.txt");
         String[] cardsText = reader.fileReader();
         int amoutOfUseableText = 0;
-        for (String s : cardsText) {
-            if (s.startsWith("Card")) {
+        for (int s = 0 ;s<cardsText.length;s++ ) {
+            if(cardsText[s].startsWith("!!STOP")){
+                amoutOfUseableText--;
+                break;
+            }
+
+            if (cardsText[s].startsWith("Card")) {
                 amoutOfUseableText++;
             }
         }
         ChanceCard[] cards = new ChanceCard[amoutOfUseableText];
-        for (int i = 0, a = 0; i < cards.length; i++, a++) {
-            if (cardsText[i].startsWith("Card")) {
-                a++;
+        for (int a = 0,b=0; a <cards.length ; a++,b+=2) {
+            if(cardsText[b].startsWith("Card")) {
+                b++;
+                cards[a] = new ChanceCard(cardsText[b], cardsText[b + 1], a);
             }
-            cards[i] = new ChanceCard(cardsText[a], cardsText[a + 1], i); // Virker ikke helt korrekt
 
         }
 

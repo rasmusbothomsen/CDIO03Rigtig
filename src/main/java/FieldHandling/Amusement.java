@@ -5,8 +5,8 @@ import TurnHandling.Player;
 public class Amusement extends Field {
     private int cost;
     private Player playerwhoOwnsIt;
-    private boolean isOwned;
-    private boolean allIsOwned;
+    private final boolean isOwned;
+    private final boolean allIsOwned;
 
 
     private Amusement sameType;
@@ -58,4 +58,7 @@ public class Amusement extends Field {
         return allIsOwned;
     }
 
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
 }

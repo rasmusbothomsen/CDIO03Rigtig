@@ -6,14 +6,33 @@ public class Player {
         private final String name;
 
         private int money;
-        private boolean isBroke;
+        private boolean canSkipJail;
+
+    public boolean isBroke() {
+        return isBroke;
+    }
+
+    public boolean isCanSkipJail() {
+        return canSkipJail;
+    }
+
+    public void setCanSkipJail(boolean canSkipJail) {
+        this.canSkipJail = canSkipJail;
+    }
+
+    private final boolean isBroke;
 
     public int getPlacementONBoard() {
         return placementONBoard;
     }
 
     public void setPlacementONBoard(int placementONBoard) {
-        this.placementONBoard = placementONBoard;
+        if(this.placementONBoard>placementONBoard){
+            this.placementONBoard = placementONBoard;
+            GameController.passStart(this);
+        }
+        this.placementONBoard=placementONBoard;
+
     }
     public void movePlacementOnBoard(int movedBy){
         this.placementONBoard+=movedBy;
@@ -53,6 +72,7 @@ public class Player {
             this.playerNumber = playerNumber;
             this.money = 35;
             this.placementONBoard=0;
+            canSkipJail=false;
             isBroke=false;
         }
     }
