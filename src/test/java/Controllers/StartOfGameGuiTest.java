@@ -15,7 +15,6 @@ class StartOfGameGuiTest {
     }
     public static void guiTester(){
         StartOfGameGui startOfGameGui = new StartOfGameGui();
-        JFrame frame = startOfGameGui.whatLanguage();
     }
 
 }

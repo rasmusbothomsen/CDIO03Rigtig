@@ -1,9 +1,14 @@
 
 package Controllers;
 
+        import gui_codebehind.SwingComponentFactory;
+
         import java.awt.*;
         import java.awt.event.ActionEvent;
         import java.awt.event.ActionListener;
+        import java.awt.event.KeyEvent;
+        import java.awt.event.KeyListener;
+        import java.util.concurrent.CountDownLatch;
         import javax.swing.*;
 
 
@@ -15,7 +20,10 @@ public class StartOfGameGui extends JPanel {
     private JLabel jcomp5;
     private JLabel jcomp6;
     private JLabel jcomp7;
-    private static String language;
+
+
+    private  String language;
+    private  CountDownLatch latch = new CountDownLatch(1);
 
 
 
@@ -28,6 +36,7 @@ public class StartOfGameGui extends JPanel {
         jcomp5 = new JLabel("Hello and welcome to Monopoly Junior! ");
         jcomp6 = new JLabel("We are very exited to show you the game!");
         jcomp7 = new JLabel("Please first select your language");
+
 
         //adjust size and set layout
         setPreferredSize(new Dimension(474, 364));
@@ -58,31 +67,74 @@ public class StartOfGameGui extends JPanel {
     }
 
 
+
     public String getLanguage() {
+        final CountDownLatch latch = new CountDownLatch(1);
+        JButton danish = new JButton("danish");
 
         danish.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                language="danish";
+                StartOfGameGui.this.language = "danish";
+                latch.countDown();
             }
         });
+        danish.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                StartOfGameGui.this.language="danish";
+                latch.countDown();
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
+
         english.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                language="english";
+                StartOfGameGui.this.language="english";
                 System.out.println("Testin");
+                latch.countDown();
             }
         });
         more.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                language="danish";
+                StartOfGameGui.this.language="danish";
+                latch.countDown();
 
             }
         });
 
-        return language;
+
+        try {
+            latch.await();
+            return StartOfGameGui.this.language;
+        } catch (InterruptedException var9) {
+            var9.printStackTrace();
+            return null;
+        }
+
+
     }
+    private void getFocus(JButton okButton) {
+        try {
+            Thread.sleep(100L);
+            okButton.requestFocusInWindow();
+        } catch (InterruptedException var3) {
+        }
+
+    }
+
 
     public JFrame whatLanguage () {
         JFrame frame = new JFrame ("MyPanel");
@@ -92,6 +144,15 @@ public class StartOfGameGui extends JPanel {
         frame.pack();
         frame.setVisible (true);
         return frame;
+    }
+    public void removeGui(){
+        Frame[] frames = JFrame.getFrames();
+        for (int i = 0; i < frames.length; i++) {
+            frames[i].removeAll();
+            frames[i].setVisible(false);
+
+        }
+
     }
 }
 
