@@ -5,20 +5,20 @@ import java.util.List;
 import java.util.Random;
 
 public class Bank {
-    private Player[] players;
+    private static Player[] players;
 
     public Bank(Player[] players) {
-        this.players = players;
+        Bank.players = players;
     }
 
-    public void affectPlayersBank(int playerNumberOne, int affectAmount) {
+    public static void affectPlayersBank(int playerNumberOne, int affectAmount) {
         if (playerNumberOne <= players.length) {
             players[playerNumberOne - 1].addMoney(affectAmount);
         }
 
     }
 
-    public void affectPlayersBank(int playerNumberOne, int affectAmountOfOne, int playerNumberTwo, int affectAmountOfTwo) {
+    public static void affectPlayersBank(int playerNumberOne, int affectAmountOfOne, int playerNumberTwo, int affectAmountOfTwo) {
         if (playerNumberOne <= players.length) {
             players[playerNumberOne - 1].addMoney(affectAmountOfOne);
 
@@ -29,7 +29,7 @@ public class Bank {
         }
     }
 
-    public void affectPlayersBank(int playerNumberOne, int affectAmountOfOne, int playerNumberTwo, int affectAmountOfTwo, int playerNumberThree, int affectAmountOfThree) {
+    public static void affectPlayersBank(int playerNumberOne, int affectAmountOfOne, int playerNumberTwo, int affectAmountOfTwo, int playerNumberThree, int affectAmountOfThree) {
         if (playerNumberOne <= players.length) {
             players[playerNumberOne - 1].addMoney(affectAmountOfOne);
 
@@ -44,7 +44,7 @@ public class Bank {
         }
     }
 
-    public void affectPlayersBank(int playerNumberOne, int affectAmountOfOne, int playerNumberTwo, int affectAmountOfTwo, int playerNumberThree, int affectAmountOfThree, int playerNumberFour, int affectAmountOfFour) {
+    public static void affectPlayersBank(int playerNumberOne, int affectAmountOfOne, int playerNumberTwo, int affectAmountOfTwo, int playerNumberThree, int affectAmountOfThree, int playerNumberFour, int affectAmountOfFour) {
         if (playerNumberOne <= players.length) {
             players[playerNumberOne - 1].addMoney(affectAmountOfOne);
 
@@ -60,6 +60,17 @@ public class Bank {
             players[playerNumberFour - 1].addMoney(affectAmountOfFour);
         }
     }
+    public static void allPayOnePlayer(Player player, int amount){
+        for (int i = 0; i < players.length; i++) {
+            if(players[i]!=player){
+                players[i].addMoney(amount*-1);
+            }else {
+                players[i].addMoney(amount*players.length-1);
+            }
+        }
+
+    }
+
 }
 
 

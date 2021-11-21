@@ -30,7 +30,7 @@ public class GUIHandler {
         gui = GUIcreator.guiCreator(Color.pink.darker());
         fields = gui.getFields();
         guiPlayers = new GUI_Player[players.length];
-        this.players=players;
+        GUIHandler.players =players;
         createPlayers(players);
 
     }
@@ -109,6 +109,9 @@ public class GUIHandler {
     }
     public static void playerWentToJail(Player player){
 
+    }
+    public static boolean askYesOrNo(String question, String choice1, String choice2){
+        return gui.getUserLeftButtonPressed(question,choice1,choice2);
     }
 
 

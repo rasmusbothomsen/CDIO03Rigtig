@@ -6,7 +6,7 @@ class CardDeckTest {
     @Test
     void testReader(){
     CardDeck cardDeck = new CardDeck();
-    System.out.println(cardDeck.toString());
+    System.out.println(cardDeck);
 
     }
 

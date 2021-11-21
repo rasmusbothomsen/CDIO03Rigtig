@@ -1,11 +1,12 @@
 package Controllers;
 
+import Objects.PlayerCreators;
 import TurnHandling.Player;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GameControllerTest {
+ class GameControllerTest {
     @Test
     void testSorter(){
         int[] rolls = {2,1,3,6};
@@ -21,13 +22,7 @@ class GameControllerTest {
         GameController gameController = new GameController(players);
         GameController.startOFGame();
     }
-    Player[] playerTestCreater(){
-        Player[] players = new Player[4];
-        for(int i =0; i<4;i++){
-            players[i] = new Player("test"+i,i);
-        }
-        return players;
-    }
+
 
     @Test
     void playerOver25Test(){
@@ -37,10 +32,16 @@ class GameControllerTest {
 
     @Test
     void turnTester(){
-        GameController gameController= new GameController(playerTestCreater());
+        GameController gameController= new GameController(PlayerCreators.createPlayers());
         GUIHandler.addChoice("ABe","Monkey","Vælg sprog");
         GameController.startOFGame();
         GameController.playOneTurn();
+    }
+
+
+    @Test
+    void chanceCardTest() throws InterruptedException {
+
     }
 
 }

@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class Dice {
 
-    private Random dice = new Random();
-    private int faceValue;
+    private final Random dice = new Random();
+    private final int faceValue;
 
     public Dice(int faceValue){
         this.faceValue=faceValue;

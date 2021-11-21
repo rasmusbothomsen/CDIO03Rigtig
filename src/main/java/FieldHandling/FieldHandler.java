@@ -54,8 +54,9 @@ public class FieldHandler {
     private static void isChance(Player player, Object[] fields){
         Chance chanceField = (Chance)fields[player.getPlacementONBoard()];
         ChanceCard card = cardDeck.pullCard();
-        chanceCardHandler.applyEffectFromCard(player, card);
         GUIHandler.showChanceCard(card);
+        System.out.println(card.nameOfCard+"\n"+card.cardDescription);
+        chanceCardHandler.applyEffectFromCard(player, card);
 
     }
     private static void isRestroom(Player player, Object[] fields){
@@ -69,5 +70,13 @@ public class FieldHandler {
     private static void isField(Player player,Object[] fields){
         GUIHandler.printField(player.getPlacementONBoard());
     }
+    public static void drawNewChanceCard(Player player){
+        ChanceCard card = cardDeck.pullCard();
+        chanceCardHandler.applyEffectFromCard(player,card);
+        chanceCardHandler.applyEffectFromCard(player, card);
 
+    }
+    public static Object getOneField(int placement){
+        return board.getFields()[placement];
+    }
 }

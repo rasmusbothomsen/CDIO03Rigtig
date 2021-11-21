@@ -1,7 +1,7 @@
 package FieldHandling;
 
 public class Jail extends Field {
-    private boolean goTo;
+    private final boolean goTo;
 
     public boolean isGoTo() {
         return goTo;
