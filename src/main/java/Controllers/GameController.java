@@ -1,12 +1,9 @@
 package Controllers;
 import FieldHandling.Amusement;
-import FieldHandling.Board;
-import FieldHandling.Field;
+import GUI.GUIHandler;
 import TurnHandling.PlayTurn;
 import FieldHandling.FieldHandler;
 import TurnHandling.Player;
-
-import java.util.concurrent.TimeUnit;
 
 public class GameController {
     private static GUIHandler guiHandler;

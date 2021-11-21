@@ -12,6 +12,18 @@
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
     </properties>
+
+    <pluginRepositories>
+    <pluginRepository>
+        <id>intellij-repository</id>
+        <url>https://www.jetbrains.com/intellij-repository/releases</url>
+    </pluginRepository>
+    <pluginRepository>
+        <id>intellij-third-party</id>
+        <url>https://cache-redirector.jetbrains.com/intellij-dependencies</url>
+    </pluginRepository>
+    </pluginRepositories>
+
     <repositories>
         <repository>
             <id>Matador_GUI-repository</id>
@@ -21,8 +33,10 @@
                 <updatePolicy>always</updatePolicy>
             </snapshots>
         </repository>
+
     </repositories>
     <dependencies>
+
         <dependency>
             <groupId>diplomitdtu</groupId>
             <artifactId>matadorgui</artifactId>
@@ -34,6 +48,12 @@
             <version>5.8.1</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.intellij</groupId>
+            <artifactId>forms_rt</artifactId>
+            <version>5.0</version>
+        </dependency>
+
     </dependencies>
 
 

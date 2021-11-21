@@ -1,8 +1,7 @@
-package Controllers;
+package GUI;
 
 import FieldHandling.Amusement;
 import FieldHandling.ChanceCard;
-import FieldHandling.Field;
 import TurnHandling.Player;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;

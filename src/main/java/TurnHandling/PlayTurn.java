@@ -1,9 +1,6 @@
 package TurnHandling;
 
 
-import Controllers.GUIHandler;
-import Controllers.GameController;
-
 public class PlayTurn {
 
     private boolean isBroke;

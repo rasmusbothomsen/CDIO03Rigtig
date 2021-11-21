@@ -1,8 +1,11 @@
-import GUI.StartOfGameGui;
+package GUI;
 
-public class run {
-    public static void main(String[] args) throws InterruptedException {
+public class StartTester {
+    public static void main(String[] args) {
         StartOfGameGui startOfGameGui = new StartOfGameGui();
         System.out.println(startOfGameGui.getLanguage());
+
+
+
     }
 }

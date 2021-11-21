@@ -1,4 +1,4 @@
-package Controllers;
+package GUI;
 import FieldHandling.*;
 import gui_fields.*;
 import gui_main.GUI;

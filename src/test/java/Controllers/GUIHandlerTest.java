@@ -1,11 +1,9 @@
 package Controllers;
 
 import FieldHandling.ChanceCard;
+import GUI.GUIHandler;
 import Objects.PlayerCreators;
-import TurnHandling.Player;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class GUIHandlerTest {
 

@@ -3,7 +3,7 @@ package FieldHandling;
 import Controllers.Bank;
 import Controllers.GameController;
 import TurnHandling.Player;
-import Controllers.GUIHandler;
+import GUI.GUIHandler;
 
 public class EffectFromChanceCardHandler {
     private Player player;

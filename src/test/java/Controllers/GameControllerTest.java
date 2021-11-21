@@ -1,12 +1,11 @@
 package Controllers;
 
+import GUI.GUIHandler;
 import Objects.PlayerCreators;
 import TurnHandling.Player;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
- class GameControllerTest {
+class GameControllerTest {
     @Test
     void testSorter(){
         int[] rolls = {2,1,3,6};

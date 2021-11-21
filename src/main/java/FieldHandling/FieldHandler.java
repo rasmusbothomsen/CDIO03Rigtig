@@ -1,7 +1,7 @@
 package FieldHandling;
 
 
-import Controllers.GUIHandler;
+import GUI.GUIHandler;
 import TurnHandling.Player;
 
 

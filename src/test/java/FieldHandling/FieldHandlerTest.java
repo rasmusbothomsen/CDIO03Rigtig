@@ -1,13 +1,10 @@
 package FieldHandling;
 
 import Controllers.Bank;
-import Controllers.GUIHandler;
-import Controllers.GameController;
+import GUI.GUIHandler;
 import Objects.PlayerCreators;
 import TurnHandling.Player;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class FieldHandlerTest {
     @Test
