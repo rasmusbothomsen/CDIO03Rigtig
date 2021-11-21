@@ -3,6 +3,7 @@ package GUI;
 import FieldHandling.Amusement;
 import FieldHandling.ChanceCard;
 import TurnHandling.Player;
+import gui_fields.GUI_Car;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_fields.GUI_Street;
@@ -21,6 +22,7 @@ public class GUIHandler {
         for(int i =0; i< players.length;i++){
             if(players[i]!=null){
                 guiPlayers [i]= new GUI_Player(players[i].getName(),players[i].getMoney());
+                guiPlayers[i].getCar().setPrimaryColor(players[i].getCarColor());
                 gui.addPlayer(guiPlayers[i]);
             }
         }
