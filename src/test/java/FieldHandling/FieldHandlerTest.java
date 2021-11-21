@@ -15,7 +15,7 @@ class FieldHandlerTest {
         somo.setPlacementONBoard(3);
 
         GUIHandler guiHandler = new GUIHandler(players);
-        FieldHandler fieldHandler = new FieldHandler();
+        new FieldHandler();
         FieldHandler.initiateField(somo);
         boolean testagain = GUIHandler.askYesOrNo("test again?","ye","no");
         while(testagain){
