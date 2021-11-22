@@ -1,6 +1,7 @@
 package GUI;
 
 import Controllers.GameController;
+import Controllers.TextFileReader;
 import FieldHandling.Amusement;
 import FieldHandling.ChanceCard;
 import TurnHandling.Player;
@@ -99,11 +100,11 @@ public class GUIHandler {
     }
     public static void printLandedOnAmusement(Amusement field, Player playerWhoIsOnField){
         addHouseToField(playerWhoIsOnField);
-        printText("You landed on "+field.getFieldName()+" You bought the field for "+field.getCost()+"$" );
-    }
+        printText(TextFileReader.getFieldsText()[44]+field.getFieldName()+TextFileReader.getFieldsText()[49]+field.getCost()+"$" );
+    } // Printer "Du er landet på... Du har købt dette felt for..."
     public static void printLandedOnOwnedAmusement(Amusement field, Player playerWhoIsOnField, int amountPayed){
-        printText("You landed on "+field.getPlayerwhoOwnsIt().getName()+"'s field pay "+amountPayed+"$");
-    }
+        printText(TextFileReader.getFieldsText()[44]+field.getPlayerwhoOwnsIt().getName()+TextFileReader.getFieldsText()[53]+amountPayed+"$");
+    } // Printer "Du er landet på... 's felt betal...
     public static void upDatePlayerBalance(){
         for (int i = 0; i < guiPlayers.length; i++) {
             guiPlayers[i].setBalance(players[i].getMoney());

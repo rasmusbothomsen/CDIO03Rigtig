@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-public class TextFileReader {
+public class    TextFileReader {
     private static String[] chanceCardText;
 
     public static String[] getChanceCardText() {

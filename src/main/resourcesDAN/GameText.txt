@@ -41,9 +41,16 @@ Du er løbet tør for penge og spillet er slut.
 Winner
 Videren af Monopoly Junior er:
 11
+Du er landet på
+12
 ErrorMessage
 Du har indtastet noget forkert. Følg anvisningen på skærmen og prøv igen!
-
+13
+Du har købt dette felt for
+14
+$
+15
+'s felt, betal
 
 
 
