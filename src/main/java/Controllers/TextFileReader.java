@@ -8,59 +8,91 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 public class TextFileReader {
-        private final int arrayLenght;
-        private final URL resource;
-        private File file;
+    private static String[] chanceCardText;
 
-        public TextFileReader(String fileName) {
-            this.resource= getClass().getClassLoader().getResource(fileName);
-            try {
-                this.file = new File((this.resource.toURI()));
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
-            }
-            this.arrayLenght = this.getFileLength();
+    public static String[] getChanceCardText() {
+        return chanceCardText;
+    }
+
+    public static String[] getFieldsText() {
+        return fieldsText;
+    }
+
+    public static String[] getGameText() {
+        return gameText;
+    }
+
+    private static String[] fieldsText;
+    private static String[] gameText;
+
+    public TextFileReader(String language) {
+        fileCreator(language);
+    }
+
+    private void fileCreator(String language) {
+        URL resource1 = getClass().getClassLoader().getResource("ChanceCardText" + language);
+        URL resource2 = getClass().getClassLoader().getResource("FieldsText" + language);
+        URL resource3 = getClass().getClassLoader().getResource("GameText" + language);
+        File file1;
+        File file2;
+        File file3;
+        try {
+            file1 = new File(resource1.toURI());
+            chanceCardText=fileReaderPriv(getFileLength(file1),file1);
+
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            file2 = new File(resource2.toURI());
+            fieldsText=fileReaderPriv(getFileLength(file2),file2);
+
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            file3 = new File(resource3.toURI());
+            gameText=fileReaderPriv(getFileLength(file3),file3);
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
         }
 
-        private int getFileLength() {
-            int fileLines = 0;
 
-            try {
-                for(BufferedReader reader = new BufferedReader(new FileReader(file)); reader.readLine() != null; ++fileLines) {
-                }
+    }
 
-                return fileLines;
-            } catch (IOException var3) {
-                var3.printStackTrace();
-                return 0;
-            }
-        }
 
-        private String[] fileReaderPriv() throws IOException {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            String currentline = reader.readLine();
-            String[] allText = new String[this.arrayLenght];
+    private int getFileLength(File file) {
+        int fileLines = 0;
 
-            for(int i = 0; currentline != null && i < allText.length; ++i) {
-                allText[i] = currentline;
-                currentline = reader.readLine();
+        try {
+            for (BufferedReader reader = new BufferedReader(new FileReader(file)); reader.readLine() != null; ++fileLines) {
             }
 
-            reader.close();
-            return allText;
-        }
-
-        public String[] fileReader() {
-            String[] returnFile = new String[this.arrayLenght];
-
-            try {
-                returnFile = this.fileReaderPriv();
-            } catch (IOException var3) {
-                var3.printStackTrace();
-            }
-
-            return returnFile;
+            return fileLines;
+        } catch (IOException var3) {
+            var3.printStackTrace();
+            return 0;
         }
     }
+
+
+    private String[] fileReaderPriv(int arrayLenght, File file) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+        String currentline = reader.readLine();
+        String[] allText = new String[arrayLenght];
+
+        for (int i = 0; currentline != null && i < allText.length; ++i) {
+            allText[i] = currentline;
+            currentline = reader.readLine();
+        }
+
+        reader.close();
+        return allText;
+
+
+    }
+}
+
+
 
 

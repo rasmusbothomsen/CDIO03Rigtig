@@ -1,6 +1,7 @@
 package FieldHandling;
 
 import Controllers.TextFileReader;
+import org.w3c.dom.Text;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -33,8 +34,7 @@ public class CardDeck {
     }
 
     private ChanceCard[] cardDeckFiller() {
-        TextFileReader reader = new TextFileReader("ChanceCardText.txt");
-        String[] cardsText = reader.fileReader();
+        String[] cardsText = TextFileReader.getChanceCardText();
         int amoutOfUseableText = 0;
         for (int s = 0 ;s<cardsText.length;s++ ) {
             if(cardsText[s].startsWith("!!STOP")){

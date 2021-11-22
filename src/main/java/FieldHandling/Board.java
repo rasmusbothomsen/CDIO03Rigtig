@@ -63,8 +63,7 @@ public class Board {
     }
     private  void fillArrays(){
         fields=new Field[24];
-        TextFileReader reader = new TextFileReader("FieldsText.txt");
-        String[] readFiles = reader.fileReader();
+        String[] readFiles = TextFileReader.getFieldsText();
         for(int i =0,a=0; i<readFiles.length&&a<fields.length;i++){
             if(readFiles[i].startsWith("Amusement")){
                 ifAmusementToArray(a,readFiles,i+1);
