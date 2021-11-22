@@ -8,6 +8,7 @@ public class MonopolyMainGame {
         GameController gameController = new GameController(players);
         GameController.startOFGame();
         GameController.setUpBoard();
+        printEndOfGame(players);
         playTurns();
 
     }
@@ -28,12 +29,13 @@ public class MonopolyMainGame {
         String[][] result = new String[4][players.length];
         for (int a = 0, i = 0; a < players.length; a++, i = 0) {
 
-            result[i][a] = "#" + i;
+            result[a][i] = "#" + i;
             i++;
-            result[i][a] = players[a].getName();
+            result[a][i] = players[a].getName();
             i++;
-            result[i][a] = players[a].getMoney() + "$";
-            result[i][a] = GameController.getPlayerHouses(players[a]);
+            result[a][i] = players[a].getMoney() + "$";
+            i++;
+            result[a][i] = GameController.getPlayerHouses(players[a]);
 
         }
         new ScoreBoard(result);

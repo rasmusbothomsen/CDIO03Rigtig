@@ -6,19 +6,22 @@ import java.awt.*;
 
 public class Player {
         private final String name;
-
         private int money;
         private boolean canSkipJail;
+        private Color carColor;
+        private int placementONBoard;
+        private final int playerNumber;
+        private boolean isBroke;
 
-    public Color getCarColor() {
-        return carColor;
+
+    public Player(String name, int playerNumber) {
+        this.name = name;
+        this.playerNumber = playerNumber;
+        this.money = 35;
+        this.placementONBoard=0;
+        canSkipJail=false;
+        isBroke=false;
     }
-
-    private Color carColor;
-    private int placementONBoard;
-
-    private final int playerNumber;
-
     public Player(String name,String carColor, int playerNumber) {
         this.name = name;
         this.playerNumber = playerNumber;
@@ -28,6 +31,11 @@ public class Player {
         isBroke=false;
         colorFinder(carColor);
     }
+
+    public boolean isBroke() {
+        return isBroke;
+    }
+
     private void colorFinder(String color){
         if(color.startsWith("Red")){
             this.carColor= Color.red;
@@ -43,28 +51,17 @@ public class Player {
 
         } else this.carColor = Color.black;
     }
-    public Player(String name, int playerNumber) {
-        this.name = name;
-        this.playerNumber = playerNumber;
-        this.money = 35;
-        this.placementONBoard=0;
-        canSkipJail=false;
-        isBroke=false;
+
+    public Color getCarColor() {
+        return carColor;
     }
-
-
-    public boolean isBroke() {
-        return isBroke;
-    }
-
     public boolean isCanSkipJail() {
         return canSkipJail;
     }
+
     public void setCanSkipJail(boolean canSkipJail) {
         this.canSkipJail = canSkipJail;
     }
-
-    private final boolean isBroke;
 
     public int getPlacementONBoard() {
         return placementONBoard;
@@ -98,10 +95,19 @@ public class Player {
 
         public void setMoney(int money) {
             this.money = money;
+            if(this.money<=0){
+                this.money=0;
+                this.isBroke=true;
+            }
         }
 
         public void addMoney(int point) {
             this.money += point;
+            if(this.money<=0){
+                this.isBroke=true;
+                this.money=0;
+            }
+
         }
 
         public String getName() {
