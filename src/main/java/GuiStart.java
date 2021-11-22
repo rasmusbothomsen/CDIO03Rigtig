@@ -1,3 +1,4 @@
+import Controllers.TextFileReader;
 import GUI.PlayerCreation;
 import GUI.StartOfGameGui;
 import TurnHandling.Player;
@@ -8,6 +9,7 @@ public class GuiStart {
         StartOfGameGui startOfGameGui = new StartOfGameGui();
         String language =startOfGameGui.getLanguage();
         startOfGameGui= null;
+        new TextFileReader(language);
         return playerCreator();
 
 

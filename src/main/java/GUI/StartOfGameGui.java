@@ -40,7 +40,7 @@ public class StartOfGameGui extends JFrame {
         danish.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                language = "danish";
+                language = ".txt";
                 latch.countDown();
 
             }
@@ -48,7 +48,7 @@ public class StartOfGameGui extends JFrame {
         englishButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                language = "english";
+                language = "ENG.txt";
 
                 latch.countDown();
 
@@ -57,7 +57,7 @@ public class StartOfGameGui extends JFrame {
         moreButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                language = "more";
+                language = ".txt";
 
                 latch.countDown();
 
