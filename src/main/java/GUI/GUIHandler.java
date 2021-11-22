@@ -8,6 +8,9 @@ import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_fields.GUI_Street;
 import gui_main.GUI;
+import javax.swing.JOptionPane;
+
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -98,13 +101,11 @@ public class GUIHandler {
     public static void printLandedOnAmusement(Amusement field, Player playerWhoIsOnField){
         addHouseToField(playerWhoIsOnField);
         printText("You landed on "+field.getFieldName()+" You bought the field for "+field.getCost()+"$" );
-        upDatePlayerBalance();
     }
     public static void printLandedOnOwnedAmusement(Amusement field, Player playerWhoIsOnField, int amountPayed){
         printText("You landed on "+field.getPlayerwhoOwnsIt().getName()+"'s field pay "+amountPayed+"$");
-        upDatePlayerBalance();
     }
-    private static void upDatePlayerBalance(){
+    public static void upDatePlayerBalance(){
         for (int i = 0; i < guiPlayers.length; i++) {
             guiPlayers[i].setBalance(players[i].getMoney());
 
@@ -115,6 +116,9 @@ public class GUIHandler {
     }
     public static boolean askYesOrNo(String question, String choice1, String choice2){
         return gui.getUserLeftButtonPressed(question,choice1,choice2);
+    }
+    public static void printScoreBoard(String[] text){
+
     }
 
 

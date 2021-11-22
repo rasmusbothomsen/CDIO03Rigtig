@@ -168,5 +168,8 @@ public class GameController {
             nextPlayersTurn=0;
         }
     }
+    public static void upDatePlayerBalance(){
+        GUIHandler.upDatePlayerBalance();
+    }
 
 }

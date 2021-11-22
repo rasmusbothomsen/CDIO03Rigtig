@@ -34,14 +34,29 @@ public class Board {
 
     public Board() {
         fillArrays();
+        setFieldsColor(colorsFinder());
+    }
+    private String[] colorsFinder(){
+        String[] colors = new String[8];
+        String pathName="src/main/resourcesPictures/";
+        colors[0]=pathName+"brun.png";
+        colors[1]=pathName+"lyseblå.png";
+        colors[2]=pathName+"lilla.png";
+        colors[3]=pathName+"orange.png";
+        colors[4]=pathName+"rød.png";
+        colors[5]=pathName+"gul.png";
+        colors[6]=pathName+"grøn.png";
+        colors[7]=pathName+"blå.png";
+        return colors;
     }
     private void setFieldsColor(String[] pictures){
-        for (int i = 0,a=0; i < fields.length; i++) {
+        for (int i = 0,a=0,c=0; i < fields.length&&c<pictures.length; i++) {
             if(getFields()[i].getClass().equals(Amusement.class)){
-                ((Amusement)fields[i]).setPictureFile(pictures[a]);
-            }
-            if(i!=0&&i%2==0){
+                ((Amusement)fields[i]).setPictureFile(pictures[c]);
                 a++;
+                if(a!=0&&a%2==0){
+                    c++;
+                }
             }
 
         }
