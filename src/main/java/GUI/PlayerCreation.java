@@ -9,13 +9,11 @@ import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.text.StyleContext;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.util.Locale;
 import java.util.concurrent.CountDownLatch;
 import javax.swing.JOptionPane;
+
 
 public class PlayerCreation {
     protected JPanel title;
@@ -65,6 +63,29 @@ public class PlayerCreation {
         playerName = null;
         playerColor = null;
 
+        name.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                int max = 25;
+                if (name.getText().length() > max + 1) {
+                    e.consume();
+                    String shortened = name.getText().substring(0, max);
+                    name.setText(shortened);
+                } else if (name.getText().length() > max) {
+                    e.consume();
+                }
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
         latch = new CountDownLatch(1);
         name.addMouseListener(new MouseAdapter() {
             @Override
@@ -74,6 +95,7 @@ public class PlayerCreation {
                 name.removeMouseListener(this);
             }
         });
+
         ok.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

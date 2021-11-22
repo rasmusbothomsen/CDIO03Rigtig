@@ -1,9 +1,12 @@
 package Controllers;
 import FieldHandling.Amusement;
 import GUI.GUIHandler;
+import GUI.GUI_shipping;
 import TurnHandling.PlayTurn;
 import FieldHandling.FieldHandler;
 import TurnHandling.Player;
+import gui_fields.GUI_Field;
+import gui_fields.GUI_Shipping;
 
 public class GameController {
     private static GUIHandler guiHandler;
@@ -60,7 +63,7 @@ public class GameController {
     }
     private static void rollAgain(int amoutSame){
         Player[] playersToRollAgain = new Player[amoutSame];
-        for (int a = players.length-1, b=0; b < amoutSame; a--,b++) {
+        for (int a = players.length-1, b=0; b <= amoutSame; a--,b++) {
             playersToRollAgain[b]=players[a];
         }
         String rollAgainText = "";
@@ -170,6 +173,30 @@ public class GameController {
     }
     public static void upDatePlayerBalance(){
         GUIHandler.upDatePlayerBalance();
+    }
+    public static String getPlayerHouses(Player player){
+        GUI_Field[] fields = GUIHandler.getFields();
+        int houses=0;
+        for (int i = 0; i < GUIHandler.getFields().length; i++) {
+            if(fields[i].getClass().equals(GUI_Shipping.class)){
+                if (((GUI_Shipping)fields[i]).getOwnerName().equals(player.getName())){
+                houses++;
+                }
+            }
+
+        }
+        return Integer.toString(houses) ;
+    }
+    public static void playerPayPlayer(Player player, int amount){
+        String playerWhoGetsName = ((GUI_shipping)GUIHandler.getFields()[player.getPlacementONBoard()]).getOwnerName();
+        for (int i = 0; i <players.length ; i++) {
+
+            if(playerWhoGetsName.equals(players[i].getName())){
+                players[i].addMoney(amount);
+                break;
+            }
+        }
+
     }
 
 }

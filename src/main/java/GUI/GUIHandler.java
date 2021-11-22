@@ -1,21 +1,20 @@
 package GUI;
 
+import Controllers.GameController;
 import FieldHandling.Amusement;
 import FieldHandling.ChanceCard;
 import TurnHandling.Player;
-import gui_fields.GUI_Car;
-import gui_fields.GUI_Field;
-import gui_fields.GUI_Player;
-import gui_fields.GUI_Street;
+import gui_fields.*;
 import gui_main.GUI;
-import javax.swing.JOptionPane;
 
 
-
-import javax.swing.*;
 import java.awt.*;
 
 public class GUIHandler {
+    public static GUI_Field[] getFields() {
+        return fields;
+    }
+
     private static GUI_Field[] fields;
     private static GUI gui;
     private static GUI_Player[] guiPlayers;
@@ -77,9 +76,9 @@ public class GUIHandler {
         gui.displayChanceCard(chanceCard.getCardDescription());
     }
     public static void addHouseToField(Player player){
-        if(fields[player.getPlacementONBoard()].getClass().equals(GUI_Street.class)) {
-            ((GUI_Street) fields[player.getPlacementONBoard()]).setOwnerName(player.getName());
-            ((GUI_Street) fields[player.getPlacementONBoard()]).setHouses(1);
+        if(fields[player.getPlacementONBoard()].getClass().equals(GUI_shipping.class)) {
+            ((GUI_shipping) fields[player.getPlacementONBoard()]).setOwnerName(player.getName());
+            ((GUI_shipping) fields[player.getPlacementONBoard()]).setHouses(1);
         }
 
     }

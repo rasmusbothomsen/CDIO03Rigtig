@@ -1,6 +1,8 @@
 package FieldHandling;
 
 
+import Controllers.Bank;
+import Controllers.GameController;
 import GUI.GUIHandler;
 import TurnHandling.Player;
 
@@ -39,10 +41,12 @@ public class FieldHandler {
        if(amusement.isOwned()){
            if(amusement.isAllIsOwned()){
                player.addMoney(amusement.getCost()*-2);
+               GameController.playerPayPlayer(player, amusement.getCost()*2);
                GUIHandler.printLandedOnOwnedAmusement((Amusement) fields[player.getPlacementONBoard()],player,amusement.getCost()*2);
 
            }else{
                player.addMoney(amusement.getCost()*-1);
+               GameController.playerPayPlayer(player, amusement.getCost());
                GUIHandler.printLandedOnOwnedAmusement((Amusement) fields[player.getPlacementONBoard()],player,amusement.getCost());
            }
        }else{

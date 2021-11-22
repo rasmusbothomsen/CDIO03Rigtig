@@ -3,6 +3,7 @@ import FieldHandling.*;
 import gui_fields.*;
 import gui_main.GUI;
 
+
 import java.awt.*;
 
 public class GUIcreator {
@@ -21,7 +22,7 @@ public class GUIcreator {
         guiFields[0]= new GUI_Start(((Field)fieldFromBoard[0]).getFieldName(),((Field)fieldFromBoard[0]).getFieldName(),((Field)fieldFromBoard[0]).getFieldDiscription(),Color.WHITE,Color.BLACK);
         for (int i =1; i<fieldFromBoard.length;i++){
                 if(fieldFromBoard[i].getClass().equals(Amusement.class)){
-                    guiFields[i] = new GUI_Shipping(((Amusement)(fieldFromBoard[i])).getPictureFile(),(((Amusement)(fieldFromBoard[i])).getFieldName()),Integer.toString(((Amusement)(fieldFromBoard[i])).getCost()),(((Amusement)(fieldFromBoard[i])).getFieldDiscription()),Integer.toString(((Amusement)(fieldFromBoard[i])).getCost()),Color.WHITE,Color.BLACK);
+                    guiFields[i] = new GUI_shipping(((Amusement)(fieldFromBoard[i])).getPictureFile(),(((Amusement)(fieldFromBoard[i])).getFieldName()),Integer.toString(((Amusement)(fieldFromBoard[i])).getCost()),(((Amusement)(fieldFromBoard[i])).getFieldDiscription()),Integer.toString(((Amusement)(fieldFromBoard[i])).getCost()),Color.WHITE,Color.BLACK);
                 }
             if(fieldFromBoard[i].getClass().equals(Chance.class)){
                 guiFields[i]= new GUI_Chance("?",((Chance)fieldFromBoard[i]).getFieldName(),"Chance"
