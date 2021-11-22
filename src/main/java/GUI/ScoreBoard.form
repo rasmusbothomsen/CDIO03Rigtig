@@ -78,7 +78,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="b69c0" class="javax.swing.JTable" binding="scoreBoardTable">
+          <component id="b69c0" class="javax.swing.JTable" binding="scoreBoardTable" custom-create="true">
             <constraints/>
             <properties/>
           </component>
