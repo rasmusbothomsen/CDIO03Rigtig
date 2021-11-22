@@ -21,7 +21,7 @@ StartRoll
 's tur - Rul for at se om du starter.
 4
 TurnRoll
-'s tur - Tryk på rul for at kaste med terning
+'s tur - Tryk på rul for at kaste med terningen
 5
 AmusementNotOwned
 Du skal købe denne amusement. Den koster:
@@ -41,8 +41,33 @@ Du er løbet tør for penge og spillet er slut.
 Winner
 Videren af Monopoly Junior er:
 11
+Du er landet på
+12
 ErrorMessage
 Du har indtastet noget forkert. Følg anvisningen på skærmen og prøv igen!
+13
+Du har købt dette felt for
+14
+$
+15
+'s felt, betal
+16
+Rul
+17
+Gå til
+18
+Besøg
+19
+og rullede det samme, rul igen
+20
+Passerede start, modtag 2$
+Indtast dit navn her
+Spiller oprettet
+Indtast venligst et gyldigt navn
+Fejl
+Navnet er allerede taget, prøv venligst et andet
+I er nok spillere til at begynde!
+Vil du tilføje flere spillere?
 
 
 

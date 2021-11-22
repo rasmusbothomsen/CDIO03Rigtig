@@ -1,4 +1,5 @@
 package GUI;
+import Controllers.TextFileReader;
 import FieldHandling.*;
 import gui_fields.*;
 import gui_main.GUI;
@@ -31,9 +32,9 @@ public class GUIcreator {
             }
             if(fieldFromBoard[i].getClass().equals(Jail.class)){
                 if(((Jail)fieldFromBoard[i]).isGoTo()){
-                    guiFields[i]=new GUI_Jail("default",((Field) fieldFromBoard[i]).getFieldName(),((Field) fieldFromBoard[i]).getFieldDiscription(),"Go to",Color.WHITE,Color.BLACK);
+                    guiFields[i]=new GUI_Jail("default",((Field) fieldFromBoard[i]).getFieldName(),((Field) fieldFromBoard[i]).getFieldDiscription(), TextFileReader.getFieldsText()[57],Color.WHITE,Color.BLACK);// Printer "Gå til"
                 }else{
-                    guiFields[i]=new GUI_Jail("default",((Field) fieldFromBoard[i]).getFieldName(),((Field) fieldFromBoard[i]).getFieldDiscription(),"Visit",Color.WHITE,Color.BLACK);
+                    guiFields[i]=new GUI_Jail("default",((Field) fieldFromBoard[i]).getFieldName(),((Field) fieldFromBoard[i]).getFieldDiscription(),TextFileReader.getFieldsText()[59],Color.WHITE,Color.BLACK);// Printer "Besøg"
                 }
 
             }
@@ -43,5 +44,6 @@ public class GUIcreator {
         }
 return guiFields;
     }
+
 
 }

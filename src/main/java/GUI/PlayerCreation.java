@@ -1,9 +1,11 @@
 package GUI;
 
+import Controllers.TextFileReader;
 import TurnHandling.Player;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
+import org.w3c.dom.Text;
 
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
@@ -39,7 +41,7 @@ public class PlayerCreation {
             carColor.addItem(colors[i]);
 
         }
-        name.setText("Type your name here !");
+        name.setText(TextFileReader.getGameText()[63]);// "Indtast dit navn her!"
         frame.add(title);
         frame.pack();
         frame.setLocationRelativeTo(null);
@@ -121,7 +123,7 @@ public class PlayerCreation {
 
     public void playerInfoAccepted() {
 
-        infoBox("Player created", "Succses");
+        infoBox(TextFileReader.getGameText()[64], "Succses"); // "Spiller oprettet" og "Succes"
 
         carColor.removeItemAt(carColor.getSelectedIndex());
         name.setText(null);
@@ -129,20 +131,20 @@ public class PlayerCreation {
     }
 
     public void playerInfoDenied() {
-        infoBox("Please type a valid name", "Erro");
+        infoBox(TextFileReader.getGameText()[65], TextFileReader.getGameText()[66]); // Printer "Indtast venligst et gyldigt navn" og "Fejl"
     }
 
     public void playerInfoDenied(boolean isnotUniqe) {
-        infoBox("Name already chosen, please try again", "Erro");
-    }
+        infoBox(TextFileReader.getGameText()[67], TextFileReader.getGameText()[66]);
+    } // Printer "Navnet er allerede taget, prøv venligst et andet" og "Fejl"
 
     private static void infoBox(String infoMessage, String titleBar) {
         JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar, JOptionPane.INFORMATION_MESSAGE);
     }
 
     public int enoughPlayers() {
-        int jOptionPane = JOptionPane.showConfirmDialog(null, "You've reached enough players to start! \n Add more players ?", "Infobox", JOptionPane.YES_NO_OPTION);
-        return jOptionPane;
+        int jOptionPane = JOptionPane.showConfirmDialog(null, TextFileReader.getGameText()[68] + TextFileReader.getGameText()[69] , "Infobox", JOptionPane.YES_NO_OPTION);
+        return jOptionPane; // Printer "I er nok spillere til at begynde!" og "Vil du tilføje flere spillere?"
     }
 
     public void removeGui() {
