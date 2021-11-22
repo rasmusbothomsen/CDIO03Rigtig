@@ -7,6 +7,7 @@ import FieldHandling.FieldHandler;
 import TurnHandling.Player;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Shipping;
+import org.w3c.dom.Text;
 
 public class GameController {
     private static GUIHandler guiHandler;
@@ -33,7 +34,7 @@ public class GameController {
 
 //alle tekst elementerne er placeholders
     public static void startOFGame(){
-    GUIHandler.printText("Roll to start");
+    GUIHandler.printText(TextFileReader.getGameText()[20]);// Printer "'s tur rul for at se om du start"
    int[] rolls = startOfGameThrows(players);
     int[][] comparedThrows= compareThrows(rolls);
     int throwIsSame=0;
@@ -54,7 +55,7 @@ public class GameController {
     private static int[] startOfGameThrows(Player[] playersToThrow){
         int[] rolls=new int[playersToThrow.length];
         for (int i = 0; i<playersToThrow.length;i++) {
-            GUIHandler.askToRoll(playersToThrow[i].getName()+"'s Turn. Please roll");
+            GUIHandler.askToRoll(playersToThrow[i].getName()+TextFileReader.getGameText()[23]); // Printer  "'s tur - Tryk på rul for at kaste med terningen"
             rolls[i]=playTurn[i].rollDice();
             GUIHandler.showDiceRoll(rolls[i]);
             GUIHandler.printText(playersToThrow[i].getName()+" rolled a " + rolls[i]+"!");
@@ -72,7 +73,7 @@ public class GameController {
             if (i<amoutSame-1){
                 rollAgainText+=", ";
             }else{
-                rollAgainText+=" and rolled the same, roll again";
+                rollAgainText+=TextFileReader.getGameText()[60]; // Printer "og rullede det samme, rul igen
             }
         }
         GUIHandler.printText(rollAgainText);
@@ -81,7 +82,7 @@ public class GameController {
     public static void passStart(Player player){
         player.addMoney(2);
         GUIHandler.movePlayer(player);
-        GUIHandler.printText(player.getName()+" passed start, recive 2$");
+        GUIHandler.printText(player.getName()+TextFileReader.getGameText()[62]); // Printer "Passerede start, modtag 2$"
 
 
     }
@@ -113,7 +114,7 @@ public class GameController {
     }
     public static void playOneTurn(){
     int diceroll = playTurn[nextPlayersTurn].rollDice();
-        GUIHandler.askToRoll(players[nextPlayersTurn].getName()+"'s Turn. Please roll");
+        GUIHandler.askToRoll(players[nextPlayersTurn].getName()+TextFileReader.getGameText()[23]); // Printer "'s tur - Tryk på rul for at kaste med terningen"
         GUIHandler.showDiceRoll(diceroll);
         playTurn[nextPlayersTurn].movePlayer(diceroll);
         GUIHandler.movePlayer(players[nextPlayersTurn]);

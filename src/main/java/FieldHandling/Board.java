@@ -9,7 +9,7 @@ public class Board {
 
     @Override
     public String toString() {
-        StringBuilder boardDiscription= new StringBuilder("Fied  1: \t");
+        StringBuilder boardDiscription= new StringBuilder("Field  1: \t");
         for(int i =0;i<fields.length;i++){
             boardDiscription.append(((Field) fields[i]).getFieldName());
             if(i<fields.length-1) {
@@ -21,7 +21,7 @@ public class Board {
     }
 
     protected  String toClasses(){
-        StringBuilder boardDiscription= new StringBuilder("Fied  1: \t");
+        StringBuilder boardDiscription= new StringBuilder("Field  1: \t");
         for(int i =0;i<fields.length;i++){
             boardDiscription.append(fields[i].getClass());
             if(i<fields.length-1) {

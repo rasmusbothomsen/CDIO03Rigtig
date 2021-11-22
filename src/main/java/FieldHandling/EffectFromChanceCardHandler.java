@@ -2,6 +2,7 @@ package FieldHandling;
 
 import Controllers.Bank;
 import Controllers.GameController;
+import Controllers.TextFileReader;
 import TurnHandling.Player;
 import GUI.GUIHandler;
 
@@ -76,15 +77,15 @@ public class EffectFromChanceCardHandler {
 
     private void effectTwo() {
 
-        String userChoice = GUIHandler.askMultiple("How far do you want to go?", "1", "2", "3", "4", "5");
+        String userChoice = GUIHandler.askMultiple(TextFileReader.getChanceCardText()[48], "1", "2", "3", "4", "5");// Printer Hvor langt vil du rykke?
         player.movePlacementOnBoard(Integer.parseInt(userChoice));
         GameController.movePlayer(player);
 
     }
 
     private void effectThree() {
-        String userChoice = GUIHandler.askMultiple("Move 1 field or draw a new chance card", "Move", "Draw again");
-        if (userChoice.equals("Move")) {
+        String userChoice = GUIHandler.askMultiple(TextFileReader.getChanceCardText()[8], TextFileReader.getChanceCardText()[49], TextFileReader.getChanceCardText()[50]); //Printer "Ryk 1 felt frem, eller træk et chance kort mere.", "Ryk", "Træk igen"
+        if (userChoice.equals(TextFileReader.getChanceCardText()[49])) { // Printer "Ryk"
             player.movePlacementOnBoard(1);
             GameController.movePlayer(player);
         } else {
@@ -122,8 +123,8 @@ public class EffectFromChanceCardHandler {
     }
 
     private void effectTen() {
-        boolean whatField = GUIHandler.askYesOrNo("Which orange field?", ((Field) FieldHandler.getOneField(10)).getFieldName(), ((Field) FieldHandler.getOneField(11)).getFieldName());
-        if (whatField) {
+        boolean whatField = GUIHandler.askYesOrNo(TextFileReader.getChanceCardText()[51], ((Field) FieldHandler.getOneField(10)).getFieldName(), ((Field) FieldHandler.getOneField(11)).getFieldName());
+        if (whatField) { // Printer "Hvilket orange felt?"
             player.setPlacementONBoard(10);
         } else {
             player.setPlacementONBoard(11);
@@ -132,8 +133,8 @@ public class EffectFromChanceCardHandler {
     }
 
     private void effectEleven() {
-        boolean whatField = GUIHandler.askYesOrNo("Which blue field?", ((Field) FieldHandler.getOneField(4)).getFieldName(), ((Field) FieldHandler.getOneField(5)).getFieldName());
-        if (whatField) {
+        boolean whatField = GUIHandler.askYesOrNo(TextFileReader.getChanceCardText()[52], ((Field) FieldHandler.getOneField(4)).getFieldName(), ((Field) FieldHandler.getOneField(5)).getFieldName());
+        if (whatField) { // Printer "Hvilket blå felt?"
             player.setPlacementONBoard(4);
         } else {
             player.setPlacementONBoard(5);
@@ -143,8 +144,8 @@ public class EffectFromChanceCardHandler {
     }
 
     private void effectTwelve() {
-        boolean whatField = GUIHandler.askYesOrNo("Which red field?", ((Field) FieldHandler.getOneField(13)).getFieldName(), ((Field) FieldHandler.getOneField(14)).getFieldName());
-        if (whatField) {
+        boolean whatField = GUIHandler.askYesOrNo(TextFileReader.getChanceCardText()[53], ((Field) FieldHandler.getOneField(13)).getFieldName(), ((Field) FieldHandler.getOneField(14)).getFieldName());
+        if (whatField) { // Printer "Hvilket rødt felt?"
             player.setPlacementONBoard(13);
         } else {
             player.setPlacementONBoard(14);

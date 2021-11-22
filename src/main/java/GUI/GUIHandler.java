@@ -90,7 +90,7 @@ public class GUIHandler {
         return gui.getUserLeftButtonPressed(description,firstChoice,secondChoice);
     }
     public static void askToRoll( String ask){
-        gui.getUserButtonPressed(ask,TextFileReader.getFieldsText()[55]); // Printer "Rul"
+        gui.getUserButtonPressed(ask,TextFileReader.getFieldsText()[54]); // Printer "Rul"
     }
     public static void printText(String textToPrint){
         gui.showMessage(textToPrint);
@@ -100,10 +100,10 @@ public class GUIHandler {
     }
     public static void printLandedOnAmusement(Amusement field, Player playerWhoIsOnField){
         addHouseToField(playerWhoIsOnField);
-        printText(TextFileReader.getFieldsText()[44]+field.getFieldName()+TextFileReader.getFieldsText()[49]+field.getCost()+"$" );
+        printText(TextFileReader.getFieldsText()[43]+field.getFieldName()+TextFileReader.getFieldsText()[48]+field.getCost()+"$" );
     } // Printer "Du er landet på... Du har købt dette felt for..."
     public static void printLandedOnOwnedAmusement(Amusement field, Player playerWhoIsOnField, int amountPayed){
-        printText(TextFileReader.getFieldsText()[44]+field.getPlayerwhoOwnsIt().getName()+TextFileReader.getFieldsText()[53]+amountPayed+"$");
+        printText(TextFileReader.getFieldsText()[43]+field.getPlayerwhoOwnsIt().getName()+TextFileReader.getFieldsText()[52]+amountPayed+"$");
     } // Printer "Du er landet på... 's felt betal...
     public static void upDatePlayerBalance(){
         for (int i = 0; i < guiPlayers.length; i++) {

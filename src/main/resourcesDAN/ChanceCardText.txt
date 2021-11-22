@@ -46,3 +46,9 @@ Ryk frem til det næste felt som er lyseblåt eller rødt, hvis det er ledigt f�
 Card 16
 Gratis felt!
 Ryk frem til det næste felt som er brunt eller gult, hvis det er ledigt får du det gratis ellers skal du betale lejen til ejer
+Hvor langt vil du rykke?
+Ryk
+Træk igen
+Hvilket orange felt?
+Hvilket blåt felt?
+Hvilket rødt felt?
