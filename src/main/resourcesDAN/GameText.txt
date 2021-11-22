@@ -68,6 +68,8 @@ Fejl
 Navnet er allerede taget, prøv venligst et andet
 I er nok spillere til at begynde!
 Vil du tilføje flere spillere?
+rullede
+
 
 
 
