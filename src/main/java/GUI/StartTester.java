@@ -9,6 +9,7 @@ import java.net.URL;
 
 public class StartTester {
     public static void main(String[] args) {
-        TextFileReader reader = new TextFileReader("");
+        new TextFileReader(".txt");
+        IntroGui introGui = new IntroGui();
     }
 }

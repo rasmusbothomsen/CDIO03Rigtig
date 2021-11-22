@@ -20,6 +20,7 @@ public class GameController {
         guiHandler=new GUIHandler(players);
         playTurn= new PlayTurn[players.length];
         FieldHandler fieldHandler = new FieldHandler();
+        new Bank(players);
         initiatePlayturn();
     }
     private static void initiatePlayturn(){
@@ -110,11 +111,30 @@ public class GameController {
             players[i].setPlacementONBoard(0);
             GUIHandler.movePlayer(players[i]);
         }
+        int startingMoney=20;
+        switch (players.length){
+            case 2:
+                startingMoney = 20;
+                break;
+            case 3:
+                startingMoney= 18;
+                break;
+            case 4:
+                startingMoney=16;
+                break;
+            default:
+
+        }
+        for (int i = 0; i < players.length; i++) {
+            players[i].setMoney(startingMoney);
+
+        }
     }
     public static void playOneTurn(){
     int diceroll = playTurn[nextPlayersTurn].rollDice();
         GUIHandler.askToRoll(players[nextPlayersTurn].getName()+"'s Turn. Please roll");
         GUIHandler.showDiceRoll(diceroll);
+        GUIHandler.printText(players[nextPlayersTurn].getName()+" rolled a " + diceroll+"!");
         playTurn[nextPlayersTurn].movePlayer(diceroll);
         GUIHandler.movePlayer(players[nextPlayersTurn]);
         FieldHandler.initiateField(players[nextPlayersTurn]);

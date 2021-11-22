@@ -59,16 +59,19 @@ public class FieldHandler {
         Chance chanceField = (Chance)fields[player.getPlacementONBoard()];
         ChanceCard card = cardDeck.pullCard();
         GUIHandler.showChanceCard(card);
-        System.out.println(card.nameOfCard+"\n"+card.cardDescription);
         chanceCardHandler.applyEffectFromCard(player, card);
 
     }
     private static void isRestroom(Player player, Object[] fields){
         Jail field = (Jail) fields[player.getPlacementONBoard()];
-        if(field.isGoTo()){
+        if(field.isGoTo()&&!player.isCanSkipJail()){
             player.setPlacementONBoard(18);
             player.addMoney(-3);
             GUIHandler.playerWentToJail(player);
+        }
+        else{
+            //TODO fix
+            GUIHandler.printText("Havde et get out kort");
         }
     }
     private static void isField(Player player,Object[] fields){
