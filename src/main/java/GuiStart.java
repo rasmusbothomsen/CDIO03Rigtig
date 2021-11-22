@@ -2,6 +2,7 @@ import GUI.PlayerCreation;
 import GUI.StartOfGameGui;
 import TurnHandling.Player;
 
+
 public class GuiStart {
     public static Player[] startGuiAndPlayerCreator()  {
         StartOfGameGui startOfGameGui = new StartOfGameGui();

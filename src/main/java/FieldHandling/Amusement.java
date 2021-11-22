@@ -8,6 +8,16 @@ public class Amusement extends Field {
     private final boolean isOwned;
     private final boolean allIsOwned;
 
+    public String getPictureFile() {
+        return pictureFile;
+    }
+
+    public void setPictureFile(String pictureFile) {
+        this.pictureFile = pictureFile;
+    }
+
+    private String pictureFile;
+
 
     private Amusement sameType;
 

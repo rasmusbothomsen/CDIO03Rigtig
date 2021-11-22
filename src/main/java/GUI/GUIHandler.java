@@ -9,6 +9,7 @@ import gui_fields.GUI_Player;
 import gui_fields.GUI_Street;
 import gui_main.GUI;
 
+import javax.swing.*;
 import java.awt.*;
 
 public class GUIHandler {
@@ -26,6 +27,7 @@ public class GUIHandler {
                 gui.addPlayer(guiPlayers[i]);
             }
         }
+
     }
     public GUIHandler(Player[] players) {
         gui = GUIcreator.guiCreator(Color.pink.darker());

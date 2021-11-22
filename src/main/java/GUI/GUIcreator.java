@@ -13,6 +13,7 @@ public class GUIcreator {
         GUI_Field[] guiFields = fieldsCreator(fields);
         return new GUI(fieldsCreator(fields),boardColor);
 
+
     }
 
     private static GUI_Field[] fieldsCreator(Object[] fieldFromBoard){
@@ -20,8 +21,7 @@ public class GUIcreator {
         guiFields[0]= new GUI_Start(((Field)fieldFromBoard[0]).getFieldName(),((Field)fieldFromBoard[0]).getFieldName(),((Field)fieldFromBoard[0]).getFieldDiscription(),Color.WHITE.darker(),Color.green.darker());
         for (int i =1; i<fieldFromBoard.length;i++){
                 if(fieldFromBoard[i].getClass().equals(Amusement.class)){
-                    guiFields[i] = new GUI_Street(((Amusement)fieldFromBoard[i]).getFieldName(),(((Amusement) fieldFromBoard[i]).getCost())+"$",
-                            ((Amusement)fieldFromBoard[i]).getFieldDiscription(), Integer.toString(((Amusement) fieldFromBoard[i]).getCost()), Color.GRAY,Color.PINK );
+                    guiFields[i] = new GUI_Shipping("src/main/resourcesDAN/Untitled.png","heyoo","2","asdas","2",Color.GRAY,Color.orange);
                 }
             if(fieldFromBoard[i].getClass().equals(Chance.class)){
                 guiFields[i]= new GUI_Chance("?",((Chance)fieldFromBoard[i]).getFieldName(),"Chance"

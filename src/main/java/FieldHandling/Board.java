@@ -35,6 +35,17 @@ public class Board {
     public Board() {
         fillArrays();
     }
+    private void setFieldsColor(String[] pictures){
+        for (int i = 0,a=0; i < fields.length; i++) {
+            if(getFields()[i].getClass().equals(Amusement.class)){
+                ((Amusement)fields[i]).setPictureFile(pictures[a]);
+            }
+            if(i!=0&&i%2==0){
+                a++;
+            }
+
+        }
+    }
     private  void fillArrays(){
         fields=new Field[24];
         TextFileReader reader = new TextFileReader("FieldsText.txt");

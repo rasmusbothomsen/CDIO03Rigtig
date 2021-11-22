@@ -109,6 +109,7 @@ public class PlayerCreation {
     public void playerInfoDenied() {
         infoBox("Please type a valid name", "Erro");
     }
+
     public void playerInfoDenied(boolean isnotUniqe) {
         infoBox("Name already chosen, please try again", "Erro");
     }
@@ -119,7 +120,6 @@ public class PlayerCreation {
 
     public int enoughPlayers() {
         int jOptionPane = JOptionPane.showConfirmDialog(null, "You've reached enough players to start! \n Add more players ?", "Infobox", JOptionPane.YES_NO_OPTION);
-        carColor.removeItemAt(carColor.getSelectedIndex());
         return jOptionPane;
     }
 
