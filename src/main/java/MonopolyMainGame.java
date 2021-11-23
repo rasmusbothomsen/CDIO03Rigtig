@@ -1,4 +1,5 @@
 import Controllers.GameController;
+import FieldHandling.Board;
 import GUI.ScoreBoard;
 import TurnHandling.Player;
 
@@ -6,6 +7,7 @@ public class MonopolyMainGame {
     public static void main(String[] args) {
         Player[] players = GuiStart.startGuiAndPlayerCreator();
         GameController gameController = new GameController(players);
+        Board board = new Board();
         GameController.startOFGame();
         GameController.setUpBoard();
         playTurns();

@@ -9,10 +9,8 @@ class GUIHandlerTest {
 
     @Test
      void testAskToRoll(){
-
+        new TextFileReader(".txt");
         GUIHandler guiHandler = new GUIHandler(PlayerCreators.createPlayers());
-        ChanceCard chanceCard = new ChanceCard("abe","monkeyy",2);
-        GUIHandler.askToRoll("roll please");
 
     }
 

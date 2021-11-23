@@ -35,7 +35,7 @@ public class GameController {
 
 //alle tekst elementerne er placeholders
     public static void startOFGame(){
-    GUIHandler.printText(TextFileReader.getGameText()[20]);// Printer "'s tur rul for at se om du start"
+    GUIHandler.printText(players[0].getName()+TextFileReader.getGameText()[20]);// Printer "'s tur rul for at se om du start"
    int[] rolls = startOfGameThrows(players);
     int[][] comparedThrows= compareThrows(rolls);
     int throwIsSame=0;
@@ -130,6 +130,7 @@ public class GameController {
             players[i].setMoney(startingMoney);
 
         }
+        GUIHandler.upDatePlayerBalance();
     }
     public static void playOneTurn(){
     int diceroll = playTurn[nextPlayersTurn].rollDice();

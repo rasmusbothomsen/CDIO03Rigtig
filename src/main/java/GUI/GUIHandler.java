@@ -1,6 +1,5 @@
 package GUI;
 
-import Controllers.GameController;
 import Controllers.TextFileReader;
 import FieldHandling.Amusement;
 import FieldHandling.ChanceCard;
@@ -33,7 +32,7 @@ public class GUIHandler {
 
     }
     public GUIHandler(Player[] players) {
-        gui = GUIcreator.guiCreator(Color.pink.darker());
+        gui = GUIcreator.guIcreator(Color.pink.darker());
         fields = gui.getFields();
         guiPlayers = new GUI_Player[players.length];
         GUIHandler.players =players;
@@ -100,7 +99,7 @@ public class GUIHandler {
     }
     public static void printLandedOnAmusement(Amusement field, Player playerWhoIsOnField){
         addHouseToField(playerWhoIsOnField);
-        printText(TextFileReader.getFieldsText()[43]+field.getFieldName()+TextFileReader.getFieldsText()[48]+field.getCost()+"$" );
+        printText(TextFileReader.getGameText()[43]+field.getFieldName()+TextFileReader.getGameText()[48]+field.getCost()+"$" );
     } // Printer "Du er landet på... Du har købt dette felt for..."
     public static void printLandedOnOwnedAmusement(Amusement field, Player playerWhoIsOnField, int amountPayed){
         printText(TextFileReader.getFieldsText()[43]+field.getPlayerwhoOwnsIt().getName()+TextFileReader.getFieldsText()[52]+amountPayed+"$");
@@ -116,9 +115,6 @@ public class GUIHandler {
     }
     public static boolean askYesOrNo(String question, String choice1, String choice2){
         return gui.getUserLeftButtonPressed(question,choice1,choice2);
-    }
-    public static void printScoreBoard(String[] text){
-
     }
 
 
