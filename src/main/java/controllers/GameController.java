@@ -122,7 +122,7 @@ public class GameController {
             player.setMoney(startingMoney);
 
         }
-        //GUIHandler.upDatePlayerBalance();
+        GUIHandler.createPlayers(players);
     }
     public static void playOneTurn(){
     int diceroll = playTurn[nextPlayersTurn].rollDice();
