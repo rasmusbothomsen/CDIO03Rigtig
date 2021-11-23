@@ -46,4 +46,9 @@ Move to a Lightblue or Red field. If noone owns it, you get it for free. Otherwi
 Card 16
 Free field!
 Move to a Brown or Yellow field. If noone owns it, you get it for free. Otherwise pay the owner.
-
+How far do you want to move?
+Move
+Draw again
+Which orange field?
+Which blue field?
+Which red field?
