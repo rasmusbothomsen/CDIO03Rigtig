@@ -9,6 +9,7 @@ import turnHandling.Player;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Shipping;
 
+
 public class GameController {
     private static PlayTurn[] playTurn;
     private static Player[] players;
@@ -18,7 +19,7 @@ public class GameController {
         GameController.players =players;
         new GUIHandler(players);
         playTurn= new PlayTurn[players.length];
-        FieldHandler fieldHandler = new FieldHandler();
+        new FieldHandler();
         new Bank(players);
         initiatePlayturn();
     }
