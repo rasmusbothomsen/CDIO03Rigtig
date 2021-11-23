@@ -87,3 +87,4 @@ Amusement 23
 Beach
 You went to the beach.
 5
+ had a get out card

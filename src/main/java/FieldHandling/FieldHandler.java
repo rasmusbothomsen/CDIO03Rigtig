@@ -3,6 +3,7 @@ package FieldHandling;
 
 import Controllers.Bank;
 import Controllers.GameController;
+import Controllers.TextFileReader;
 import GUI.GUIHandler;
 import TurnHandling.Player;
 
@@ -71,7 +72,7 @@ public class FieldHandler {
         }
         else{
             //TODO fix
-            GUIHandler.printText("Havde et get out kort");
+            GUIHandler.printText(player.getName()+TextFileReader.getFieldsText()[89]);
         }
     }
     private static void isField(Player player,Object[] fields){

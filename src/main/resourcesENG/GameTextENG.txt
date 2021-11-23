@@ -60,15 +60,16 @@ Visit
 19
 and rolled the same, roll again
 20
-Passed start, you receive 2$
+ passed start, you receive 2$
 Input your name
 Player created
 Name is not valid, try again
 Error
 The name is already taken, try another
 You are enough players to begin
-, do you want to add more player?
+, do you want to add more players?
  rolled
+
 
 
 

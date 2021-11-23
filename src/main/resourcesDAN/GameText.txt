@@ -60,15 +60,15 @@ Besøg
 19
 og rullede det samme, rul igen
 20
-Passerede start, modtag 2$
+ passerede start, modtag 2$
 Indtast dit navn her
 Spiller oprettet
 Indtast venligst et gyldigt navn
 Fejl
 Navnet er allerede taget, prøv venligst et andet
-I er nok spillere til at begynde!
-Vil du tilføje flere spillere?
-rullede
+I er nok spillere til at begynde
+, vil du tilføje flere spillere?
+ rullede
 
 
 

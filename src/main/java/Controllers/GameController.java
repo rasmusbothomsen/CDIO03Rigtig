@@ -135,7 +135,7 @@ public class GameController {
     int diceroll = playTurn[nextPlayersTurn].rollDice();
         GUIHandler.askToRoll(players[nextPlayersTurn].getName()+TextFileReader.getGameText()[23]); // Printer "'s tur - Tryk på rul for at kaste med terningen"
         GUIHandler.showDiceRoll(diceroll);
-        GUIHandler.printText(players[nextPlayersTurn].getName()+" rolled a " + diceroll+"!");
+        GUIHandler.printText(players[nextPlayersTurn].getName()+ TextFileReader.getGameText()[70] + diceroll+"!");
         playTurn[nextPlayersTurn].movePlayer(diceroll);
         GUIHandler.movePlayer(players[nextPlayersTurn]);
         FieldHandler.initiateField(players[nextPlayersTurn]);
