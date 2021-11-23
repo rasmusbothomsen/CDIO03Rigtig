@@ -41,9 +41,34 @@ You are broke and the game is over.
 Winner
 The winner of Monopoly Junior is:
 11
+Du landede på
+12
 ErrorMessage
 The input you entered cannot be read by the program. Please try again.
-
+13
+You bought this field for
+14
+$
+15
+'s field, pay
+16
+Roll
+17
+Go to
+18
+Visit
+19
+and rolled the same, roll again
+20
+Passed start, you receive 2$
+Input your name
+Player created
+Name is not valid, try again
+Error
+The name is already taken, try another
+You are enough players to begin
+Do you want to add more player?
+ rolled
 
 
 
