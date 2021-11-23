@@ -143,7 +143,7 @@ public class PlayerCreation {
     }
 
     public int enoughPlayers() {
-        int jOptionPane = JOptionPane.showConfirmDialog(null, TextFileReader.getGameText()[68] + TextFileReader.getGameText()[69] , "Infobox", JOptionPane.YES_NO_OPTION);
+        int jOptionPane = JOptionPane.showConfirmDialog(null, TextFileReader.getGameText()[68] + TextFileReader.getGameText()[69], "Infobox", JOptionPane.YES_NO_OPTION);
         return jOptionPane; // Printer "I er nok spillere til at begynde!" og "Vil du tilføje flere spillere?"
     }
 

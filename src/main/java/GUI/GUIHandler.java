@@ -90,7 +90,7 @@ public class GUIHandler {
         return gui.getUserLeftButtonPressed(description,firstChoice,secondChoice);
     }
     public static void askToRoll( String ask){
-        gui.getUserButtonPressed(ask,TextFileReader.getFieldsText()[54]); // Printer "Rul"
+        gui.getUserButtonPressed(ask,TextFileReader.getGameText()[54]); // Printer "Rul"
     }
     public static void printText(String textToPrint){
         gui.showMessage(textToPrint);

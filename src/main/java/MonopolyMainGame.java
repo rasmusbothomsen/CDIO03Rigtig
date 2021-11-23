@@ -8,7 +8,6 @@ public class MonopolyMainGame {
         GameController gameController = new GameController(players);
         GameController.startOFGame();
         GameController.setUpBoard();
-        printEndOfGame(players);
         playTurns();
 
     }

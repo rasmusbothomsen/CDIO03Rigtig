@@ -59,7 +59,7 @@ public class GameController {
             GUIHandler.askToRoll(playersToThrow[i].getName()+TextFileReader.getGameText()[23]); // Printer  "'s tur - Tryk på rul for at kaste med terningen"
             rolls[i]=playTurn[i].rollDice();
             GUIHandler.showDiceRoll(rolls[i]);
-            GUIHandler.printText(playersToThrow[i].getName()+ TextFileReader.getGameText()[70] + rolls[i]+"!"); // Printer "rullede"
+            GUIHandler.printText(playersToThrow[i].getName()+" "+ TextFileReader.getGameText()[70] +" "+ rolls[i]+"!"); // Printer "rullede"
         }
         return rolls;
     }
