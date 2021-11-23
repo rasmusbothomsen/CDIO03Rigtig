@@ -33,7 +33,11 @@
                 <updatePolicy>always</updatePolicy>
             </snapshots>
         </repository>
-
+        <repository>
+            <id>forms_rt</id>
+            <name>forms_rt</name>
+            <url> https://mvnrepository.com/artifact/com.intellij/forms_rt</url>
+        </repository>
     </repositories>
     <dependencies>
 
@@ -42,6 +46,13 @@
             <artifactId>matadorgui</artifactId>
             <version>3.1.7</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.intellij/forms_rt -->
+        <dependency>
+            <groupId>com.intellij</groupId>
+            <artifactId>forms_rt</artifactId>
+            <version>7.0.3</version>
+        </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>

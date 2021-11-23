@@ -13,7 +13,7 @@ import java.util.logging.FileHandler;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class TC01 {
+public class TestCases {
     private Player[] players;
     private EffectFromChanceCardHandler effectFromChanceCardHandler;
     private CardDeck cardDeck;
@@ -27,11 +27,21 @@ public class TC01 {
         }
          effectFromChanceCardHandler = new EffectFromChanceCardHandler();
         cardDeck = new CardDeck();
+        new GameController(players);
+        GameController.setUpBoard();
+
 
     }
 
     @Test
-    void chanceCard7Test(){
+    void tc02(){
+
+        System.out.println(players[1].getMoney());
+
+    }
+
+    @Test
+    void tc01(){
         ChanceCard tempCard = null;
         int moneyBefore = players[1].getMoney();
         String cardDescription= "Du har lavet alle dine lektier. Modtag 2$ fra banken.";
@@ -47,6 +57,7 @@ public class TC01 {
         assertEquals(players[1].getMoney(),moneyBefore+2);
         assertTrue(isRightDescription);
         assertTrue(isRightName);
+        System.out.println(players[1].getMoney());
 
     }
 }
