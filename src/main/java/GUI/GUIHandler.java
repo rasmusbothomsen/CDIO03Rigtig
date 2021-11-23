@@ -21,7 +21,7 @@ public class GUIHandler {
     private static Player[] players;
 
 
-    private static void createPlayers(Player[] players){
+    public static void createPlayers(Player[] players){
         for(int i =0; i< players.length;i++){
             if(players[i]!=null){
                 guiPlayers [i]= new GUI_Player(players[i].getName(),players[i].getMoney());
@@ -36,7 +36,6 @@ public class GUIHandler {
         fields = gui.getFields();
         guiPlayers = new GUI_Player[players.length];
         GUIHandler.players =players;
-        createPlayers(players);
 
     }
 

@@ -17,7 +17,7 @@ public class Player {
     public Player(String name, int playerNumber) {
         this.name = name;
         this.playerNumber = playerNumber;
-        this.money = 35;
+        this.money = 0;
         this.placementONBoard=0;
         canSkipJail=false;
         isBroke=false;
