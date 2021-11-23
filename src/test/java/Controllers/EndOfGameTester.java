@@ -22,7 +22,7 @@ class EndOfGameTester {
         String[][] result = new String[players.length][4];
         for (int a = 0, i = 0; a < players.length; a++, i = 0) {
 
-            result[a][i] = "#" + a+1;
+            result[a][i] = "#" + (a+1);
             i++;
             result[a][i] = players[a].getName();
             i++;
