@@ -40,7 +40,6 @@
         </repository>
     </repositories>
     <dependencies>
-
         <dependency>
             <groupId>diplomitdtu</groupId>
             <artifactId>matadorgui</artifactId>
