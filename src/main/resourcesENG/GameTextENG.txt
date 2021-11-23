@@ -67,7 +67,7 @@ Name is not valid, try again
 Error
 The name is already taken, try another
 You are enough players to begin
-Do you want to add more player?
+, do you want to add more player?
  rolled
 
 
