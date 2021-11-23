@@ -20,6 +20,20 @@ public class Board {
         return boardDiscription.toString();
     }
 
+    public String description() {
+        StringBuilder boardDiscription= new StringBuilder("Field  1: \t");
+        for(int i =0;i<fields.length;i++){
+            boardDiscription.append(((Field) fields[i]).getFieldName()+"\t");
+
+            boardDiscription.append(((Field) fields[i]).getFieldDiscription());
+            if(i<fields.length-1) {
+                boardDiscription.append("\nField ").append(i + 2).append(":\t");
+            }
+        }
+
+        return boardDiscription.toString();
+    }
+
     protected  String toClasses(){
         StringBuilder boardDiscription= new StringBuilder("Field  1: \t");
         for(int i =0;i<fields.length;i++){
@@ -81,6 +95,7 @@ public class Board {
             if(readFiles[i].startsWith("Jail")){
                 ifJail(a,readFiles,i+1,readFiles[i+1].startsWith("goTo"));
                 a++;
+                i++;
             }
 
 

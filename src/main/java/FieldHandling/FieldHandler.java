@@ -71,7 +71,6 @@ public class FieldHandler {
             GUIHandler.playerWentToJail(player);
         }
         else{
-            //TODO fix
             GUIHandler.printText(player.getName()+TextFileReader.getFieldsText()[89]);
         }
     }

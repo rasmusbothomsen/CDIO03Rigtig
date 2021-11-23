@@ -1,3 +1,4 @@
+import Controllers.TextFileReader;
 import FieldHandling.Amusement;
 import FieldHandling.Board;
 import FieldHandling.Chance;
@@ -7,9 +8,11 @@ import org.junit.jupiter.api.Test;
 class BoardTest {
     @Test
     void testIfBoardArrayIsCorrect(){
+        new TextFileReader(".txt");
         Board board = new Board();
         Object[] fieldsTest = board.getFields();
         System.out.println(board);
+        System.out.println(board.description());
     }
     @Test
     void testClassEquals(){

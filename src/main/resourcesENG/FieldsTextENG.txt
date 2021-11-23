@@ -21,7 +21,7 @@ Icecream Store
 You are at the Icecream Store!
 1
 Jail 7
-Jail
+Detention
 You are visiting the Jail. You can rest here a while. Dont worry! You are not under arrest.
 Amusement 8
 Museum
