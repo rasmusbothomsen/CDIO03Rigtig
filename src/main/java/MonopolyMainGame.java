@@ -1,7 +1,7 @@
-import Controllers.GameController;
-import FieldHandling.Board;
-import GUI.ScoreBoard;
-import TurnHandling.Player;
+import controllers.GameController;
+import fieldHandling.Board;
+import gUI.ScoreBoard;
+import turnHandling.Player;
 
 public class MonopolyMainGame {
     public static void main(String[] args) {

@@ -1,0 +1,90 @@
+Field 1: First Line = Name, Second = Description, Third line = Amusement price
+Start
+Start
+Amusement 2
+Burgerbaren
+Du har landet på Burgerbaren!
+1
+Amusement 3
+Pizzeriaet
+Du har besøgt pizzeriaet!
+1
+Chance 4
+Chance
+Du er landet på Chancen, træk nu et tilfældigt kort og følg kortets anvisninger.
+Amusement 5
+Slikbutikken
+Du har været i slikbutikken!
+1
+Amusement 6
+Iskiosken
+Du har været i iskiosken!
+1
+Jail 7
+Fængsel
+Du er på besøg i fængsel! Her kan du blot hvile dig uden at betale noget.
+Amusement 8
+Museum
+Du er taget på museum for at lære lidt om historien!
+2
+Amusement 9
+Biblioteket
+Du er taget på biblioteket!
+2
+Chance 10
+Chance
+Du er landet på Chancen, træk nu et tilfældigt kort og følg kortets anvisninger.
+Amusement 11
+Skaterparken
+Du er taget til skaterparken for at få lidt motion!
+2
+Amusement 12
+Svømmingbassinget
+Du er endt i svømmebassinget!
+2
+Field 13
+Gratis parkering
+Du er landet på gratis parkering, her kan du blot hvile dig uden at betale noget.
+Amusement 14
+Spillehallen
+Du er landet på spillehallen!
+3
+Amusement 15
+Biografen
+Du er landet på Biografen!
+3
+Chance 16
+Chancen
+Du er landet på Chancen, træk nu et tilfældigt kort og følg kortets anvisninger.
+Amusement 17
+Legetøjsbutikken
+Du er landet på lejetøjsbutikken.
+3
+Amusement 18
+Dyrehandlen
+Du er landet på dyrehandlen!
+3
+Jail 19
+goTo // dont touch
+Gå i fængsel
+øv øv! Du er desværre havnet i fængsel.
+Amusement 20
+Bowlinghallen
+Du er landet i bowlinghallen.
+4
+Amusement 21
+Zoo
+Du er taget i ZOO!
+4
+Chance 22
+Chance
+Du er landet på Chancen, træk nu et tilfældigt kort og følg kortets anvisninger.
+Amusement 22
+Vandlandet
+Du er taget i vandlandet for at svømme lidt!
+5
+Amusement 23
+Strandpromaden
+Du er havnet i på strandpromenaden!
+5
+ havde et slip fri kort

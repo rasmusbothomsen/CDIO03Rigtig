@@ -1,0 +1,54 @@
+Card 1 - First line : Name of card
+Move to start
+Move to start - recieve 2$
+Card 2
+Move 5 fields
+Move up to 5 fields forward.
+Card 3
+Move 1 field forward.
+Move 1 field, or draw another chancecard.
+Card 4
+Too much candy
+You have eaten too much candy, pay 2$ to the bank.
+Card 5
+Released
+You get released from jail without any payment. Keep this card until you need it.
+Card 6
+Birthday
+It is your birthday and the other players give you a gift of 1$
+Card 7
+Homework
+You've made all of your homework. Recieve 2$ from the bank.
+Card 8
+Beach
+Move to the beach.
+Card 9
+Free Field!
+Move to the Skatepark, to make the perfect grind! If noone owns it you get it for free. Otherwise pay the owner.
+Card 10
+Free field!
+Move to an Orange field. If noone owns it, you get it for free. Otherwise pay the owner.
+Card 11
+Free field!
+Move to a Lightblue field. If noone owns it, you get it for free. Otherwise pay the owner.
+Card 12
+Free field!
+Move to a Red field. If noone owns it, you get it for free. Otherwise pay the owner.
+Card 13
+Free field!
+Move to a Orange or Green field. If noone owns it, you get it for free. Otherwise pay the owner.
+Card 14
+Free field!
+Move to a Pink  or Lightblue field. If noone owns it, you get it for free. Otherwise pay the owner.
+Card 15
+Free field!
+Move to a Lightblue or Red field. If noone owns it, you get it for free. Otherwise pay the owner.
+Card 16
+Free field!
+Move to a Brown or Yellow field. If noone owns it, you get it for free. Otherwise pay the owner.
+How far do you want to move?
+Move
+Draw again
+Which orange field?
+Which blue field?
+Which red field?

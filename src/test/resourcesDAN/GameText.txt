@@ -1,0 +1,76 @@
+TIL OVERSÆTTER: Denne tekstfil kan oversættes til et andet sprog. Denne tekstfil er bygget op, således at koden kan læse programmet.
+                Programmet begynder først at læse ved det første nummer. Efter et nummer er der en beskrivelsestekst i engelsk tekst, f.eks. Intro ved den første, som programmet skal bruge for at teskten ender det rigtige sted.
+                Når der skal oversættes skal man derfor KUN ændre i teksten som går fra beskrivelsesteksten og indtil det næste tal.
+1
+Intro
+Velkommen til Monopoly Junior Spillet.
+Dette spil handler om at tjene flest penge, og ikke løbe tør for dem.
+Spillet kan spilles af 2-4 spillere.
+Spillet spilles ved spillerne slår med en terning en tur ad gangen, som herefter rykker spillerens brik frem på spillebrættet.
+Hvis man lander på et Amusement felt, skal man købe feltet hvis det ikke er ejet af en anden spiller.
+Hvis det er ejet af en anden spiller, skal man betale ejeren når man lander på dette.
+Lander en spiller på gå i fængsel, rykker spilleren til gå i fængsel.
+Lander en spiller på chancekort, kan alt ske.
+Den første der løber tør for penge har tabt, og vinderen er den med flest penge tilbage.
+Held og lykke!
+2
+StartPlayerAmount
+Hvor mange spillere ønsker at spille med?
+3
+StartRoll
+'s tur - Rul for at se om du starter.
+4
+TurnRoll
+'s tur - Tryk på rul for at kaste med terningen
+5
+AmusementNotOwned
+Du skal købe denne amusement. Den koster:
+6
+AmusementBuy
+Du ejer nu:
+7
+AmusementIsOwned
+Denne amusement er ejet af en anden spiller! Du skal betale:
+8
+OutOfJailCard
+Du slipper ud af fængslet og er fri igen!
+9
+Bankrupt
+Du er løbet tør for penge og spillet er slut.
+10
+Winner
+Vinderen af Monopoly Junior er:
+11
+Du er landet på
+12
+ErrorMessage
+Du har indtastet noget forkert. Følg anvisningen på skærmen og prøv igen!
+13
+Du har købt dette felt for
+14
+$
+15
+'s felt, betal
+16
+Rul
+17
+Gå til
+18
+Besøg
+19
+og rullede det samme, rul igen
+20
+ passerede start, modtag 2$
+Indtast dit navn her
+Spiller oprettet
+Indtast venligst et gyldigt navn
+Fejl
+Navnet er allerede taget, prøv venligst et andet
+I er nok spillere til at begynde
+, vil du tilføje flere spillere?
+ rullede
+
+
+
+
+

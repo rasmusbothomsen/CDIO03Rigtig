@@ -1,8 +1,8 @@
-import Controllers.TextFileReader;
-import GUI.IntroGui;
-import GUI.PlayerCreation;
-import GUI.StartOfGameGui;
-import TurnHandling.Player;
+import controllers.TextFileReader;
+import gUI.IntroGui;
+import gUI.PlayerCreation;
+import gUI.StartOfGameGui;
+import turnHandling.Player;
 
 
 public class GuiStart {
@@ -41,16 +41,13 @@ public class GuiStart {
 
         }
         int acctualtLenght=0;
-        for (int i = 0; i < players.length; i++) {
-            if(players[i]!=null){
+        for (Player player : players) {
+            if (player != null) {
                 acctualtLenght++;
             }
         }
         Player[] returnPlayers = new Player[acctualtLenght];
-        for (int i = 0; i < acctualtLenght; i++) {
-            returnPlayers[i]=players[i];
-
-        }
+        System.arraycopy(players, 0, returnPlayers, 0, acctualtLenght);
         playerCreation.removeGui();
         playerCreation=null;
        return returnPlayers;

@@ -1,0 +1,54 @@
+Card 1 - First line : Name of card
+Ryk frem til start
+Ryk frem til start, modtag 2 dollars.
+Card 2
+Ryk 5 felter
+Ryk op til 5 felter frem.
+Card 3
+Ryk 1 felt frem
+Ryk 1 felt frem, eller træk et chance kort mere.
+Card 4
+Spist for meget slik
+Du har spist for meget slik! betal 2$ til banken
+Card 5
+Løsladt
+Du løslades uden omkostninger, behold dette kort indtil du får brug for det.
+Card 6
+Fødselsdag
+Det er din fødselsdag, alle giver dig 1 dollar!
+Card 7
+Flittig
+Du har lavet alle dine lektier. Modtag 2$ fra banken.
+Card 8
+Strandpromenaden
+Ryk frem til Strandpromenade.
+Card 9
+Gratis felt!
+Ryk frem til Skaterparken, for at lave det perfekte grind hvis ingen ejer den får du den gratis, ellers skal du betale lejen til ejer.
+Card 10
+Gratis Felt!
+Ryk frem til et orange felt. Hvis det er ledigt får du det gratis, ellers skal du betale ejeren
+Card 11
+Gratis Felt!
+Ryk frem til et lyseblåt felt. Hvis det er ledigt får du det gratis, ellers skal du betale ejeren
+Card 12
+Gratis Felt!
+Ryk frem til et rødt felt. Hvis det er ledigt får du det gratis ellers skal du betale ejeren
+Card 13
+Gratis Felt!
+Ryk frem til et orange eller grønt felt, hvis det er ledigt får du det gratis ellers skal du betale ejeren
+Card 14
+Gratis felt!
+Ryk frem til det næste felt som er pink eller mørkeblåt, hvis det er ledigt får du det gratis ellers skal du betale lejen til ejer
+Card 15
+Gratis felt!
+Ryk frem til det næste felt som er lyseblåt eller rødt, hvis det er ledigt får du det gratis ellers skal du betale lejen til ejer
+Card 16
+Gratis felt!
+Ryk frem til det næste felt som er brunt eller gult, hvis det er ledigt får du det gratis ellers skal du betale lejen til ejer
+Hvor langt vil du rykke?
+Ryk
+Træk igen
+Hvilket orange felt?
+Hvilket blåt felt?
+Hvilket rødt felt?
