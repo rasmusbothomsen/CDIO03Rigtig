@@ -1,11 +1,7 @@
 package Controllers;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
+import java.io.*;
+import java.util.ArrayList;
 
 public class    TextFileReader {
     private static String[] chanceCardText;
@@ -30,66 +26,53 @@ public class    TextFileReader {
     }
 
     private void fileCreator(String language) {
-        URL resource1 = getClass().getClassLoader().getResource("ChanceCardText" + language);
-        URL resource2 = getClass().getClassLoader().getResource("FieldsText" + language);
-        URL resource3 = getClass().getClassLoader().getResource("GameText" + language);
-        File file1;
-        File file2;
-        File file3;
+        String file1Name = "/ChanceCardText"+language;
+        String file2Name = "/FieldsText"+language;
+        String file3Name = "/GameText"+language;
         try {
-            file1 = new File(resource1.toURI());
-            chanceCardText=fileReaderPriv(getFileLength(file1),file1);
 
-        } catch (URISyntaxException | IOException e) {
+            InputStream in = getClass().getResourceAsStream(file1Name);
+            assert in != null;
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+            chanceCardText=fileReaderPriv(reader);
+
+            in = getClass().getResourceAsStream(file2Name);
+            assert in != null;
+            reader = new BufferedReader(new InputStreamReader(in));
+            fieldsText=fileReaderPriv(reader);
+
+            in = getClass().getResourceAsStream(file3Name);
+            assert in != null;
+            reader = new BufferedReader(new InputStreamReader(in));
+            gameText=fileReaderPriv(reader);
+            reader.close();
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        try {
-            file2 = new File(resource2.toURI());
-            fieldsText=fileReaderPriv(getFileLength(file2),file2);
-
-        } catch (URISyntaxException | IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            file3 = new File(resource3.toURI());
-            gameText=fileReaderPriv(getFileLength(file3),file3);
-        } catch (URISyntaxException | IOException e) {
-            e.printStackTrace();
-        }
-
 
     }
 
 
-    private int getFileLength(File file) {
-        int fileLines = 0;
 
-        try {
-            for (BufferedReader reader = new BufferedReader(new FileReader(file)); reader.readLine() != null; ++fileLines) {
+
+    private String[] fileReaderPriv( BufferedReader reader) throws IOException {
+        String tempString = reader.readLine();
+        ArrayList<String> allText = new ArrayList<>();
+        if (tempString!=null) {
+            while (tempString!=null) {
+                allText.add(tempString);
+                tempString = reader.readLine();
             }
-
-            return fileLines;
-        } catch (IOException var3) {
-            var3.printStackTrace();
-            return 0;
         }
+
+        return listToArray(allText);
     }
-
-
-    private String[] fileReaderPriv(int arrayLenght, File file) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        String currentline = reader.readLine();
-        String[] allText = new String[arrayLenght];
-
-        for (int i = 0; currentline != null && i < allText.length; ++i) {
-            allText[i] = currentline;
-            currentline = reader.readLine();
+    private String[] listToArray(ArrayList<String> list){
+        String[] returnText= new String[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            returnText[i]=list.get(i);
         }
-
-        reader.close();
-        return allText;
-
-
+        return returnText;
     }
 }
 
