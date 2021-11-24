@@ -76,6 +76,7 @@ public class PlayerCreation {
                 }
             }
 
+
             @Override
             public void keyPressed(KeyEvent e) {
 
@@ -110,6 +111,15 @@ public class PlayerCreation {
         }
 
     }
+
+    public JTextField getTextField(){
+        return name;
+    }
+    public void setNameAreaTest(String testText){
+        name.setText(testText);
+    }
+
+
 
     public void playerInfoAccepted() {
 
