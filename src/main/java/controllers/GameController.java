@@ -107,6 +107,7 @@ public class GameController {
         return playerRolls;
     }
     public static void setUpBoard(){
+        GUIHandler.createPlayers(players);
         for (Player value : players) {
             value.setPlacementONBoard(0);
             GUIHandler.movePlayer(value);

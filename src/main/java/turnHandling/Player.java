@@ -1,6 +1,7 @@
 package turnHandling;
 
 import controllers.GameController;
+import gUI.GUIHandler;
 
 import java.awt.*;
 
@@ -68,12 +69,16 @@ public class Player {
     }
 
     public void setPlacementONBoard(int placementONBoard) {
-        if(this.placementONBoard>placementONBoard){
+        if(placementONBoard>=GUIHandler.getFields().length|| placementONBoard<0){
+            this.placementONBoard=0;
+        }else if(this.placementONBoard>placementONBoard){
             this.placementONBoard = placementONBoard;
             GameController.passStart(this);
         }
-        this.placementONBoard=placementONBoard;
+        else {
 
+            this.placementONBoard = placementONBoard;
+        }
     }
 
     public void movePlacementOnBoard(int movedBy){

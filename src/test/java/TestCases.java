@@ -10,6 +10,8 @@ import org.junit.jupiter.api.Test;
 import turnHandling.Player;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.util.logging.FileHandler;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -68,18 +70,35 @@ public class TestCases {
      */
     void tc02() {
         String[] color = {"Blue", "Yellow", "Black", "White"};
+        Robot bot = null;
+        try {
+            bot = new Robot();
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
 
         PlayerCreation playerCreation = new PlayerCreation(color);
-        playerCreation.setNameAreaTest("");
+        playerCreation.setPlayerInfo();
+        for (int i = 0; i < 28; i++) {
 
+            bot.keyPress(69);
+            bot.delay(50);
+            bot.keyRelease(69);
 
+        }
+        assertEquals(26,playerCreation.getTextField().getText().length());
+        bot = null;
 
-
-
-
-
-
-
+    }
+    @Test
+    void tc0201(){
+        String[] color = {"Blue", "Yellow", "Black", "White"};
+        Robot bot = null;
+        try {
+            bot = new Robot();
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -91,6 +110,14 @@ public class TestCases {
     void tc03() {
 
 
+        players[1].setPlacementONBoard(24);
+        GameController.movePlayer(players[1]);
+
+        players[1].setPlacementONBoard(-2);
+        GameController.movePlayer(players[1]);
+
+        players[1].setPlacementONBoard(30);
+        GameController.movePlayer(players[1]);
     }
 
     @Test
@@ -99,10 +126,29 @@ public class TestCases {
      * Det forventede output er:
      * Ved 2 spillere: 20$
      * Ved 3 spillere: 18$
-     * Ved 4 spillere: 20$
+     * Ved 4 spillere: 16$
      */
     void tc04() {
+        Player[] players = {new Player("test1",0),new Player("test2",1)};
+        new GameController(players);
+        GameController.setUpBoard();
+        assertEquals(players[0].getMoney(),20);
+        assertEquals(players[1].getMoney(),20);
 
+        Player[] players1 = {new Player("test1",0),new Player("test2",1),new Player("test3",2)};
+        new GameController(players1);
+        GameController.setUpBoard();
+        assertEquals(players1[0].getMoney(),18);
+        assertEquals(players1[1].getMoney(),18);
+        assertEquals(players1[2].getMoney(),18);
+
+        Player[] players2 = {new Player("test1",0),new Player("test2",1),new Player("test3",2),new Player("test4",3)};
+        new GameController(players2);
+        GameController.setUpBoard();
+        assertEquals(players2[0].getMoney(),16);
+        assertEquals(players2[1].getMoney(),16);
+        assertEquals(players2[2].getMoney(),16);
+        assertEquals(players2[3].getMoney(),16);
     }
 
 

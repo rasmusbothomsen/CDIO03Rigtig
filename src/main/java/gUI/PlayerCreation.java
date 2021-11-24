@@ -23,7 +23,7 @@ public class PlayerCreation {
     protected JButton ok;
     protected JButton cancel;
     protected JFrame frame;
-    private CountDownLatch latch;
+    public CountDownLatch latch;
     private String playerName;
     private String playerColor;
     private int lastIndex;
@@ -112,13 +112,13 @@ public class PlayerCreation {
 
     }
 
-    public JTextField getTextField(){
+    public JTextField getTextField() {
         return name;
     }
-    public void setNameAreaTest(String testText){
+
+    public void setNameAreaTest(String testText) {
         name.setText(testText);
     }
-
 
 
     public void playerInfoAccepted() {
