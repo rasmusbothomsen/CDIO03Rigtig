@@ -14,6 +14,7 @@ class EndOfGameTester {
     new TextFileReader(".txt");
     Player[] players = {new Player("test",0),new Player("test2",1)};
     new GameController(players);
+    GameController.setUpBoard();
     players[0].setMoney(0);
     GameController.upDatePlayerBalance();
     printEndOfGame(players);
@@ -28,7 +29,7 @@ class EndOfGameTester {
             i++;
             result[a][i] = players[a].getMoney() + "$";
             i++;
-            result[a][i] = GameController.getPlayerHouses(players[a]);
+            result[a][i] = "3";
 
         }
         new ScoreBoard(result);

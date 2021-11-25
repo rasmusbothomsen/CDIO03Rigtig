@@ -24,7 +24,7 @@ TurnRoll
 's turn - Press on roll to roll the dice.
 5
 AmusementNotOwned
-YOu have to buy this amusenment. Price is:
+You have to buy this amusenment. Price is:
 6
 AmusementBuy
 You now own the amusement:
@@ -41,7 +41,7 @@ You are broke and the game is over.
 Winner
 The winner of Monopoly Junior is:
 11
-Du landede på
+You landed on
 12
 ErrorMessage
 The input you entered cannot be read by the program. Please try again.
