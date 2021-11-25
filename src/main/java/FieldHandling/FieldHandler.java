@@ -70,8 +70,11 @@ public class FieldHandler {
             player.addMoney(-3);
             GUIHandler.playerWentToJail(player);
         }
-        else{
+        else if(field.isGoTo()&& player.isCanSkipJail()){
             GUIHandler.printText(player.getName()+TextFileReader.getFieldsText()[89]);
+        }else{
+            GUIHandler.printText(player.getName()+" "+TextFileReader.getFieldsText()[24]);
+
         }
     }
     private static void isField(Player player,Object[] fields){
