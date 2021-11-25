@@ -45,7 +45,7 @@ public class GameController {
             }
         }
         if(throwIsSame>0) {
-            rollAgain(throwIsSame);
+            rollAgain(throwIsSame+1);
             return;
         }
         setStartingPlayer(comparedThrows);
@@ -65,7 +65,7 @@ public class GameController {
     }
     private static void rollAgain(int amoutSame){
         Player[] playersToRollAgain = new Player[amoutSame];
-        for (int a = players.length-1, b=0; b <= amoutSame; a--,b++) {
+        for (int a = players.length-1, b=0; b < amoutSame; a--,b++) {
             playersToRollAgain[b]=players[a];
         }
         String rollAgainText = "";
@@ -108,10 +108,6 @@ public class GameController {
         return playerRolls;
     }
     public static void setUpBoard(){
-        for (int i = 0; i < players.length; i++) {
-            players[i].setPlacementONBoard(0);
-            GUIHandler.movePlayer(players[i]);
-        }
         int startingMoney=20;
         switch (players.length){
             case 2:
@@ -131,6 +127,10 @@ public class GameController {
 
         }
         GUIHandler.createPlayers(players);
+        for (int i = 0; i < players.length; i++) {
+            players[i].setPlacementONBoard(0);
+            GUIHandler.movePlayer(players[i]);
+        }
     }
     public static void playOneTurn(){
     int diceroll = playTurn[nextPlayersTurn].rollDice();
