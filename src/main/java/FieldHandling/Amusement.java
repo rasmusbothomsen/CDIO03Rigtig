@@ -51,6 +51,10 @@ public class Amusement extends Field {
     public void setPlayerwhoOwnsIt(Player playerwhoOwnsIt) {
         this.playerwhoOwnsIt = playerwhoOwnsIt;
         this.isOwned=true;
+        if(sameType.isOwned){
+            this.allIsOwned=true;
+            sameType.allIsOwned=true;
+        }
     }
 
     public Player getPlayerwhoOwnsIt() {

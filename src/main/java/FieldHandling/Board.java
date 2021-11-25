@@ -78,10 +78,11 @@ public class Board {
     private  void fillArrays(){
         fields=new Field[24];
         String[] readFiles = TextFileReader.getFieldsText();
-        for(int i =0,a=0; i<readFiles.length&&a<fields.length;i++){
+        for(int i =0,a=0,c=1; i<readFiles.length&&a<fields.length;i++){
             if(readFiles[i].startsWith("Amusement")){
-                ifAmusementToArray(a,readFiles,i+1);
+                ifAmusementToArray(a,readFiles,i+1,c%2==0);
                 a++;
+                c++;
             }
             if(readFiles[i].startsWith("Field")){
                 ifFieldToArray(a,readFiles,i+1);
@@ -122,10 +123,13 @@ public class Board {
         return fields;
     }
 
-    private  void ifAmusementToArray(int arrayToFill, String[] readFiles, int placementRead){
+    private  void ifAmusementToArray(int arrayToFill, String[] readFiles, int placementRead, boolean isLast){
 
             fields[arrayToFill] = new Amusement(readFiles[placementRead], readFiles[placementRead + 1], arrayToFill, Integer.parseInt(readFiles[placementRead + 2]));
-
+            if(isLast){
+                ((Amusement)fields[placementRead]).setSameType(((Amusement)fields[placementRead-1]));
+                ((Amusement)fields[placementRead-1]).setSameType(((Amusement)fields[placementRead]));
+            }
 
 
     }
