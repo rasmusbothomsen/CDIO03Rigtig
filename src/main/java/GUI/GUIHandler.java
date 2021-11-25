@@ -98,10 +98,10 @@ public class GUIHandler {
     }
     public static void printLandedOnAmusement(Amusement field, Player playerWhoIsOnField){
         addHouseToField(playerWhoIsOnField);
-        printText(TextFileReader.getGameText()[43]+field.getFieldName()+TextFileReader.getGameText()[48]+field.getCost()+"$" );
+        printText(TextFileReader.getGameText()[43]+" "+field.getFieldName()+" "+TextFileReader.getGameText()[48]+field.getCost()+"$" );
     } // Printer "Du er landet på... Du har købt dette felt for..."
     public static void printLandedOnOwnedAmusement(Amusement field, Player playerWhoIsOnField, int amountPayed){
-        printText(TextFileReader.getFieldsText()[43]+field.getPlayerwhoOwnsIt().getName()+TextFileReader.getFieldsText()[52]+amountPayed+"$");
+        printText(TextFileReader.getFieldsText()[43]+" "+field.getPlayerwhoOwnsIt().getName()+" "+TextFileReader.getFieldsText()[52]+" "+amountPayed+"$");
     } // Printer "Du er landet på... 's felt betal...
     public static void upDatePlayerBalance(){
         for (int i = 0; i < guiPlayers.length; i++) {
@@ -110,7 +110,7 @@ public class GUIHandler {
         }
     }
     public static void playerWentToJail(Player player){
-
+        printText(player.getName()+" "+TextFileReader.getFieldsText()[69]);
     }
     public static boolean askYesOrNo(String question, String choice1, String choice2){
         return gui.getUserLeftButtonPressed(question,choice1,choice2);

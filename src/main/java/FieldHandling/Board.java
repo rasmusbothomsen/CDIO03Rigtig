@@ -127,8 +127,8 @@ public class Board {
 
             fields[arrayToFill] = new Amusement(readFiles[placementRead], readFiles[placementRead + 1], arrayToFill, Integer.parseInt(readFiles[placementRead + 2]));
             if(isLast){
-                ((Amusement)fields[placementRead]).setSameType(((Amusement)fields[placementRead-1]));
-                ((Amusement)fields[placementRead-1]).setSameType(((Amusement)fields[placementRead]));
+                ((Amusement)fields[arrayToFill]).setSameType(((Amusement)fields[arrayToFill-1]));
+                ((Amusement)fields[arrayToFill-1]).setSameType(((Amusement)fields[arrayToFill]));
             }
 
 
