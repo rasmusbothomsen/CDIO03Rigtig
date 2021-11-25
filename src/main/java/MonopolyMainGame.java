@@ -28,15 +28,15 @@ public class MonopolyMainGame {
 
     private static void printEndOfGame(Player[] players) {
         String[][] result = new String[players.length][4];
-        for (int a = 0, i = 0; a < players.length; a++, i = 0) {
+        for (int a = 1, i = 0; a < players.length; a++, i = 0) {
 
             result[a][i] = "#" + (a+1);
             i++;
-            result[a][i] = players[players.length-a].getName();
+            result[a][i] = players[players.length-a-1].getName();
             i++;
-            result[a][i] = players[players.length-a].getMoney() + "$";
+            result[a][i] = players[players.length-a-1].getMoney() + "$";
             i++;
-            result[a][i] = GameController.getPlayerHouses(players[players.length-a]);
+            result[a][i] = GameController.getPlayerHouses(players[players.length-a-1]);
 
         }
         new ScoreBoard(result);

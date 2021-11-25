@@ -93,15 +93,18 @@ public class GUIHandler {
     public static void printText(String textToPrint){
         gui.showMessage(textToPrint);
     }
-    public static void printField(int fieldPlacement){
+    public static void printField(String fieldDescription){
+        gui.displayChanceCard(fieldDescription);
 
     }
     public static void printLandedOnAmusement(Amusement field, Player playerWhoIsOnField){
         addHouseToField(playerWhoIsOnField);
         printText(TextFileReader.getGameText()[43]+" "+field.getFieldName()+" "+TextFileReader.getGameText()[48]+field.getCost()+"$" );
+        printText(field.getFieldDiscription());
     } // Printer "Du er landet på... Du har købt dette felt for..."
     public static void printLandedOnOwnedAmusement(Amusement field, Player playerWhoIsOnField, int amountPayed){
-        printText(TextFileReader.getFieldsText()[43]+" "+field.getPlayerwhoOwnsIt().getName()+" "+TextFileReader.getFieldsText()[52]+" "+amountPayed+"$");
+        printText(TextFileReader.getGameText()[43]+" "+field.getPlayerwhoOwnsIt().getName()+" "+TextFileReader.getGameText()[52]+" "+amountPayed+"$");
+        printText(field.getFieldDiscription());
     } // Printer "Du er landet på... 's felt betal...
     public static void upDatePlayerBalance(){
         for (int i = 0; i < guiPlayers.length; i++) {
