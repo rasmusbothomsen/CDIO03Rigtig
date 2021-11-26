@@ -67,7 +67,7 @@ You are at the pet shop.
 Jail 19
 goTo // dont touch
 Go to jail
-Unfortunatly, you have to go to jail.
+Unfortunatly, you have to go to jail. Pay 2$.
 Amusement 20
 Bowling Alley
 You are bowling!
