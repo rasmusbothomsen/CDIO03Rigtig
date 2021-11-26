@@ -134,11 +134,14 @@ public class GameController {
     public static void playOneTurn(){
         if(players[nextPlayersTurn].isInJail()) {
             if (players[nextPlayersTurn].isCanSkipJail()) {
+                players[nextPlayersTurn].setInJail(false);
+
                 GUIHandler.printText(players[nextPlayersTurn].getName() + " " + TextFileReader.getGameText()[35]);
             } else {
-                GUIHandler.printText(players[nextPlayersTurn].getName() + " " + TextFileReader.getGameText()[72]);
                 players[nextPlayersTurn].addMoney(-1);
+                players[nextPlayersTurn].setInJail(false);
 
+                GUIHandler.printText(players[nextPlayersTurn].getName() + " " + TextFileReader.getGameText()[72]);
             }
         }
             int diceroll = playTurn[nextPlayersTurn].rollDice();

@@ -40,7 +40,7 @@ public class Player {
     }
 
     public void setInJail(boolean inJail) {
-        isInJail = inJail;
+        this.isInJail = inJail;
     }
 
     public boolean isBroke() {
