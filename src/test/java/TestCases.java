@@ -212,6 +212,9 @@ public class TestCases {
     }
 
     @Test
+    /**
+     * Tester om spiller bliver sat i fængsel
+     */
     void tc08(){
         RobotThread robotThread = new RobotThread();
         Thread thread = new Thread(robotThread);
