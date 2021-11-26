@@ -1,0 +1,8 @@
+
+Først skal vores program findes inde på vores repository i github. Her kan man enten køre en webudgave eller hente det ned på computeren.
+
+Når vores repository er fundet, skal man herefter vælge “Clone” for at kopiere vore URL.
+
+Derfra går man ind på Intellij og vælger “new project from Version Control”. URL’en kopieres så ind og der trykkes “Clone”.
+
+Trin for trin: “File” - “New” - “Project from Version Control” - “Clone”.
