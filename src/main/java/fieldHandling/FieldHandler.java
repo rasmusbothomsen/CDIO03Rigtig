@@ -29,7 +29,7 @@ public class FieldHandler {
             isRestroom(player,fields);
         }
         if(fields[player.getPlacementONBoard()].getClass().equals(Field.class)){
-            isField(player);
+            isField(player,fields);
         }
 
 
@@ -38,21 +38,23 @@ public class FieldHandler {
     }
     private static void isAmusement(Player player, Object[] fields){
        Amusement amusement= ((Amusement) fields[player.getPlacementONBoard()]);
-       if(amusement.isOwned()){
+        if(amusement.getPlayerwhoOwnsIt()==player){
+            GUIHandler.printText(TextFileReader.getGameText()[71]);
+        } else if(amusement.isOwned()){
            if(amusement.isAllIsOwned()){
-               player.addMoney(amusement.getCost()*-2);
-               GameController.playerPayPlayer(player, amusement.getCost()*2);
-               GUIHandler.printLandedOnOwnedAmusement((Amusement) fields[player.getPlacementONBoard()],player,amusement.getCost()*2);
 
-           }else{
+                   player.addMoney(amusement.getCost() * -2);
+                   GameController.playerPayPlayer(player, amusement.getCost() * 2);
+                   GUIHandler.printLandedOnOwnedAmusement(amusement, player, amusement.getCost() * 2);
+           }else {
                player.addMoney(amusement.getCost()*-1);
                GameController.playerPayPlayer(player, amusement.getCost());
-               GUIHandler.printLandedOnOwnedAmusement((Amusement) fields[player.getPlacementONBoard()],player,amusement.getCost());
+               GUIHandler.printLandedOnOwnedAmusement(amusement,player,amusement.getCost());
            }
        }else{
            player.addMoney(amusement.getCost()*-1);
            amusement.setPlayerwhoOwnsIt(player);
-           GUIHandler.printLandedOnAmusement((Amusement) fields[player.getPlacementONBoard()],player);
+           GUIHandler.printLandedOnAmusement(amusement,player);
        }
     }
     private static void isChance(Player player){
@@ -68,12 +70,15 @@ public class FieldHandler {
             player.addMoney(-3);
             GUIHandler.playerWentToJail(player);
         }
-        else{
+        else if(field.isGoTo()&& player.isCanSkipJail()){
             GUIHandler.printText(player.getName()+TextFileReader.getFieldsText()[89]);
+        }else{
+            GUIHandler.printText(player.getName()+" "+TextFileReader.getFieldsText()[24]);
+
         }
     }
-    private static void isField(Player player){
-        GUIHandler.printField(player);
+    private static void isField(Player player,Object[] fields){
+        GUIHandler.printField(((Field)fields[player.getPlacementONBoard()]).getFieldDiscription());
     }
     public static void drawNewChanceCard(Player player){
         ChanceCard card = cardDeck.pullCard();

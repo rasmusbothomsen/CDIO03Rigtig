@@ -82,10 +82,13 @@ public class Player {
     }
 
     public void movePlacementOnBoard(int movedBy){
-        this.placementONBoard+=movedBy;
-        if(placementONBoard>=24){
-            placementONBoard=0;
+        if(placementONBoard+movedBy>=24){
+            int placementover = placementONBoard+movedBy-24;
+            placementONBoard=placementover;
             GameController.passStart(this);
+        }else{
+            this.placementONBoard+=movedBy;
+
         }
     }
 

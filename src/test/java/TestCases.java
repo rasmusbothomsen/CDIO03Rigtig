@@ -3,17 +3,16 @@ import controllers.TextFileReader;
 import fieldHandling.CardDeck;
 import fieldHandling.ChanceCard;
 import fieldHandling.EffectFromChanceCardHandler;
-import fieldHandling.FieldHandler;
+import gUI.GUIHandler;
+import gUI.GUI_shipping;
 import gUI.PlayerCreation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import turnHandling.Player;
 
-import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.util.logging.FileHandler;
 
+import static java.awt.event.InputEvent.BUTTON1_DOWN_MASK;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -68,7 +67,7 @@ public class TestCases {
      * Tredje test er ved input: "Frederik"
      * Fjerde test er ved input: "Wolfeschlegelsteinhausenbergerdorff"
      */
-    void tc02() {
+    void tc02_01() {
         String[] color = {"Blue", "Yellow", "Black", "White"};
         Robot bot = null;
         try {
@@ -76,29 +75,29 @@ public class TestCases {
         } catch (AWTException e) {
             e.printStackTrace();
         }
-
+        RobotTyperThread robotTyperThread = new RobotTyperThread(30);
+        Thread thread = new Thread(robotTyperThread);
         PlayerCreation playerCreation = new PlayerCreation(color);
+        thread.start();
         playerCreation.setPlayerInfo();
-        for (int i = 0; i < 28; i++) {
+        thread.interrupt();
 
-            bot.keyPress(69);
-            bot.delay(50);
-            bot.keyRelease(69);
-
-        }
-        assertEquals(26,playerCreation.getTextField().getText().length());
-        bot = null;
 
     }
     @Test
-    void tc0201(){
-        String[] color = {"Blue", "Yellow", "Black", "White"};
+    void tc02_02(){String[] color = {"Blue", "Yellow", "Black", "White"};
         Robot bot = null;
         try {
             bot = new Robot();
         } catch (AWTException e) {
             e.printStackTrace();
         }
+        RobotTyperThread robotTyperThread = new RobotTyperThread(-1);
+        Thread thread = new Thread(robotTyperThread);
+        PlayerCreation playerCreation = new PlayerCreation(color);
+        thread.start();
+        playerCreation.setPlayerInfo();
+        thread.interrupt();
 
     }
 
@@ -108,7 +107,9 @@ public class TestCases {
      * Input til felt array: [>24]
      */
     void tc03() {
-
+        RobotThread robotThread = new RobotThread();
+        Thread thread = new Thread(robotThread);
+        thread.start();
 
         players[1].setPlacementONBoard(24);
         GameController.movePlayer(players[1]);
@@ -118,6 +119,7 @@ public class TestCases {
 
         players[1].setPlacementONBoard(30);
         GameController.movePlayer(players[1]);
+        thread.interrupt();
     }
 
     @Test
@@ -158,11 +160,42 @@ public class TestCases {
          * Pengebeholdning 1: (-1)
          * Penegbeholdning 2: (0)
          * Pengebeholdning 3: (2000)
-         * Pengebeholdning 4: (2147483650) 
+         * Pengebeholdning 4: (214748365)
          */
     void tc05() {
 
+        players[1].setMoney(-1);
+        assertEquals(0,players[1].getMoney());
+        players[1].setMoney(0);
+        assertEquals(0,players[1].getMoney());
+        players[1].setMoney(2000);
+        assertEquals(2000,players[1].getMoney());
+        players[1].setMoney(214748365);
+        assertEquals(214748365,players[1].getMoney());
 
+
+
+    }
+
+    @Test
+    /**
+     * Tester at spilleren får 2$ hvis de passerer start
+     */
+    void tc06(){
+        RobotThread robotThread = new RobotThread();
+        Thread thread = new Thread(robotThread);
+        int moneybefore= players[1].getMoney();
+        thread.start();
+        players[1].movePlacementOnBoard(24);
+        GameController.movePlayer(players[1]);
+        thread.interrupt();
+        assertEquals(moneybefore+2,players[1].getMoney());
+
+    }
+    @Test
+    void tc07(){
+        int moneybefore= players[1].getMoney();
+        players[1].movePlacementOnBoard(2);
     }
 
 }

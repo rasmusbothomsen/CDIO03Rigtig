@@ -23,7 +23,7 @@ public class PlayerCreation {
     protected JButton ok;
     protected JButton cancel;
     protected JFrame frame;
-    public CountDownLatch latch;
+    private CountDownLatch latch;
     private String playerName;
     private String playerColor;
     private int lastIndex;

@@ -5,8 +5,13 @@ import turnHandling.Player;
 public class Amusement extends Field {
     private int cost;
     private Player playerwhoOwnsIt;
-    private final boolean isOwned;
-    private final boolean allIsOwned;
+    private  boolean isOwned;
+    private  boolean allIsOwned;
+
+    private String pictureFile;
+
+
+    private Amusement sameType;
 
     public String getPictureFile() {
         return pictureFile;
@@ -15,11 +20,6 @@ public class Amusement extends Field {
     public void setPictureFile(String pictureFile) {
         this.pictureFile = pictureFile;
     }
-
-    private String pictureFile;
-
-
-    private Amusement sameType;
 
     @Override
     public String toString() {
@@ -50,6 +50,11 @@ public class Amusement extends Field {
 
     public void setPlayerwhoOwnsIt(Player playerwhoOwnsIt) {
         this.playerwhoOwnsIt = playerwhoOwnsIt;
+        this.isOwned=true;
+        if(sameType.isOwned){
+            this.allIsOwned=true;
+            sameType.allIsOwned=true;
+        }
     }
 
     public Player getPlayerwhoOwnsIt() {
