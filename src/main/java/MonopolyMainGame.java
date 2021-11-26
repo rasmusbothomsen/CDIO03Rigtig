@@ -6,8 +6,8 @@ import turnHandling.Player;
 public class MonopolyMainGame {
     public static void main(String[] args) {
         Player[] players = GuiStart.startGuiAndPlayerCreator();
-        GameController gameController = new GameController(players);
-        Board board = new Board();
+         new GameController(players);
+         new Board();
         GameController.setUpBoard();
         GameController.startOFGame();
         playTurns();
@@ -28,15 +28,15 @@ public class MonopolyMainGame {
 
     private static void printEndOfGame(Player[] players) {
         String[][] result = new String[players.length][4];
-        for (int a = 1, i = 0; a < players.length; a++, i = 0) {
+        for (int a = 0, i = 0,b = players.length-1; a < players.length; a++, i = 0,b--) {
 
             result[a][i] = "#" + (a+1);
             i++;
-            result[a][i] = players[players.length-a-1].getName();
+            result[a][i] = players[b].getName();
             i++;
-            result[a][i] = players[players.length-a-1].getMoney() + "$";
+            result[a][i] = players[b].getMoney() + "$";
             i++;
-            result[a][i] = GameController.getPlayerHouses(players[players.length-a-1]);
+            result[a][i] = "3";
 
         }
         new ScoreBoard(result);

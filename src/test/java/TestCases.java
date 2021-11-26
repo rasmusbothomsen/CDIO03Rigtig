@@ -60,7 +60,7 @@ public class TestCases {
     }
 
 
-    @Test
+   // @Test
     /** Navnelængdetest - Tester om vi kan taste et navn ind der er længere end +25 bogstaver.
      * Denne test er en boundary test. Så vi har nogle grænseværdier:
      * første test er ved intet input
@@ -68,7 +68,7 @@ public class TestCases {
      * Tredje test er ved input: "Frederik"
      * Fjerde test er ved input: "Wolfeschlegelsteinhausenbergerdorff"
      */
-    void tc02_01() {
+    /*void tc02_01() {
         String[] color = {"Blue", "Yellow", "Black", "White"};
         Robot bot = null;
         try {
@@ -85,8 +85,8 @@ public class TestCases {
 
 
     }
-    @Test
-    void tc02_02(){String[] color = {"Blue", "Yellow", "Black", "White"};
+    //@Test
+    //void tc02_02(){String[] color = {"Blue", "Yellow", "Black", "White"};
         Robot bot = null;
         try {
             bot = new Robot();
@@ -100,7 +100,7 @@ public class TestCases {
         playerCreation.setPlayerInfo();
         thread.interrupt();
 
-    }
+    }*/
 
 
     @Test
