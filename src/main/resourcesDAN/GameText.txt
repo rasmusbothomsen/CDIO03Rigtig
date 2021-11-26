@@ -33,7 +33,7 @@ AmusementIsOwned
 Denne amusement er ejet af en anden spiller! Du skal betale:
 8
 OutOfJailCard
-Du slipper ud af fængslet og er fri igen!
+Du havde et slip ud af fængsel-kort og slipper ud af fængslet og er fri igen!
 9
 Bankrupt
 Du er løbet tør for penge og spillet er slut.
@@ -70,6 +70,7 @@ I er nok spillere til at begynde
 , vil du tilføje flere spillere?
  rullede
  Du landede på dit eget felt, du skal ikke betale noget
+ Er i fængsel, betal 1$ for at komme ud
 
 
 

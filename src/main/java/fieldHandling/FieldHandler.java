@@ -65,13 +65,11 @@ public class FieldHandler {
     }
     private static void isRestroom(Player player, Object[] fields){
         Jail field = (Jail) fields[player.getPlacementONBoard()];
-        if(field.isGoTo()&&!player.isCanSkipJail()){
+        if(field.isGoTo()){
             player.setPlacementONBoard(18);
-            player.addMoney(-3);
+            player.addMoney(-2);
+            player.setInJail(true);
             GUIHandler.playerWentToJail(player);
-        }
-        else if(field.isGoTo()&& player.isCanSkipJail()){
-            GUIHandler.printText(player.getName()+TextFileReader.getFieldsText()[89]);
         }else{
             GUIHandler.printText(player.getName()+" "+TextFileReader.getFieldsText()[24]);
 

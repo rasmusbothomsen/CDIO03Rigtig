@@ -132,14 +132,23 @@ public class GameController {
         }
     }
     public static void playOneTurn(){
-    int diceroll = playTurn[nextPlayersTurn].rollDice();
-        GUIHandler.askToRoll(players[nextPlayersTurn].getName()+TextFileReader.getGameText()[23]); // Printer "'s tur - Tryk på rul for at kaste med terningen"
-        GUIHandler.showDiceRoll(diceroll);
-        GUIHandler.printText(players[nextPlayersTurn].getName()+ TextFileReader.getGameText()[70] +" "+ diceroll+"!");
-        playTurn[nextPlayersTurn].movePlayer(diceroll);
-        GUIHandler.movePlayer(players[nextPlayersTurn]);
-        FieldHandler.initiateField(players[nextPlayersTurn]);
-        addOneToNextPlaer();
+        if(players[nextPlayersTurn].isInJail()) {
+            if (players[nextPlayersTurn].isCanSkipJail()) {
+                GUIHandler.printText(players[nextPlayersTurn].getName() + " " + TextFileReader.getGameText()[35]);
+            } else {
+                GUIHandler.printText(players[nextPlayersTurn].getName() + " " + TextFileReader.getGameText()[72]);
+                players[nextPlayersTurn].addMoney(-1);
+
+            }
+        }
+            int diceroll = playTurn[nextPlayersTurn].rollDice();
+            GUIHandler.askToRoll(players[nextPlayersTurn].getName() + TextFileReader.getGameText()[23]); // Printer "'s tur - Tryk på rul for at kaste med terningen"
+            GUIHandler.showDiceRoll(diceroll);
+            GUIHandler.printText(players[nextPlayersTurn].getName() + TextFileReader.getGameText()[70] + " " + diceroll + "!");
+            playTurn[nextPlayersTurn].movePlayer(diceroll);
+            GUIHandler.movePlayer(players[nextPlayersTurn]);
+            FieldHandler.initiateField(players[nextPlayersTurn]);
+            addOneToNextPlaer();
 
     }
     public static void playOneExtraTurn(){

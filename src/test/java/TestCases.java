@@ -6,6 +6,7 @@ import fieldHandling.EffectFromChanceCardHandler;
 import gUI.GUIHandler;
 import gUI.GUI_shipping;
 import gUI.PlayerCreation;
+import gui_fields.GUI_Ownable;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import turnHandling.Player;
@@ -164,14 +165,17 @@ public class TestCases {
          */
     void tc05() {
 
-        players[1].setMoney(-1);
-        assertEquals(0,players[1].getMoney());
-        players[1].setMoney(0);
-        assertEquals(0,players[1].getMoney());
         players[1].setMoney(2000);
         assertEquals(2000,players[1].getMoney());
         players[1].setMoney(214748365);
-        assertEquals(214748365,players[1].getMoney());
+        players[1].addMoney(214748365);
+
+        players[2].setMoney(-1);
+        assertEquals(0,players[2].getMoney());
+        assertTrue(players[2].isBroke());
+        players[3].setMoney(0);
+        assertEquals(0,players[2].getMoney());
+        assertTrue(players[3].isBroke());
 
 
 
@@ -193,9 +197,31 @@ public class TestCases {
 
     }
     @Test
+    /**
+     * Lander på et amusement
+     */
     void tc07(){
+        RobotThread robotThread = new RobotThread();
+        Thread thread = new Thread(robotThread);
         int moneybefore= players[1].getMoney();
         players[1].movePlacementOnBoard(2);
+        thread.start();
+        GameController.movePlayer(players[1]);
+        assertTrue(((GUI_shipping)GUIHandler.getFields()[players[1].getPlacementONBoard()]).getOwnerName().equals(players[1].getName()));
+        thread.interrupt();
+    }
+
+    @Test
+    void tc08(){
+        RobotThread robotThread = new RobotThread();
+        Thread thread = new Thread(robotThread);
+        int moneybefore= players[1].getMoney();
+        players[1].setPlacementONBoard(18);
+        thread.start();
+        GameController.movePlayer(players[1]);
+        thread.interrupt();
+        assertTrue(players[1].isInJail());
+        assertEquals(moneybefore-2,players[1].getMoney());
     }
 
 }

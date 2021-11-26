@@ -67,7 +67,7 @@ Du er landet på dyrehandlen!
 Jail 19
 goTo // dont touch
 Gå i fængsel
-øv øv! Du er desværre havnet i fængsel.
+øv øv! Du er desværre havnet i fængsel betal 2$.
 Amusement 20
 Bowlinghallen
 Du er landet i bowlinghallen.

@@ -13,7 +13,7 @@ public class Player {
         private int placementONBoard;
         private final int playerNumber;
         private boolean isBroke;
-
+        private boolean isInJail;
 
     public Player(String name, int playerNumber) {
         this.name = name;
@@ -22,6 +22,7 @@ public class Player {
         this.placementONBoard=0;
         canSkipJail=false;
         isBroke=false;
+        isInJail=false;
     }
     public Player(String name,String carColor, int playerNumber) {
         this.name = name;
@@ -30,7 +31,16 @@ public class Player {
         this.placementONBoard=0;
         canSkipJail=false;
         isBroke=false;
+        isInJail=false;
         colorFinder(carColor);
+    }
+
+    public boolean isInJail() {
+        return isInJail;
+    }
+
+    public void setInJail(boolean inJail) {
+        isInJail = inJail;
     }
 
     public boolean isBroke() {
