@@ -36,7 +36,7 @@ public class MonopolyMainGame {
             i++;
             result[a][i] = players[b].getMoney() + "$";
             i++;
-            result[a][i] = "3";
+            result[a][i] = GameController.getPlayerHouses(players[b]);
 
         }
         new ScoreBoard(result);
